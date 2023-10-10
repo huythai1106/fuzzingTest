@@ -1,0 +1,1588 @@
+{
+    "Requests": [
+        {
+            "uri": "http://ocsp.digicert.com/",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "ECAcc (hkc/BD15)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://ocsp.digicert.com/",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "ECAcc (hkc/BD32)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://ocsp.digicert.com/",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "ECAcc (hkc/BD3F)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://ocsp.digicert.com/",
+            "method": "POST",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://ocsp.digicert.com/",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "HIT",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://ocsp.pki.goog/gts1c3",
+            "method": "POST",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://r3.o.lencr.org/",
+            "method": "POST",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695265069",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695351469",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695437869",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/guestbook.php\" method=\"POST\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"name\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/passcheck.php\" method=\"POST\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"password\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/recent.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/search.php?query=ZAP",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/tos.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/users/login.php\" method=\"POST\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"password\" \"username\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/users/register.php\" method=\"POST\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"againpass\" \"firstname\" \"lastname\" \"password\" \"username\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/sample.php?userid=1",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/guestbook.php\" method=\"POST\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"name\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/passcheck.php\" method=\"POST\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"password\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/pictures/search.php\" method=\"get\" style=\"display:inline;\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"query2\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "<form action=\"/users/register.php\" method=\"POST\">",
+            "otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"againpass\" \"firstname\" \"lastname\" \"password\" \"username\" ]."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695265069",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695351469",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695437869",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/etc/dictionaries-common/words",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pic",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/recent.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/search.php?query=ZAP",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/robots.txt",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/sitemap.xml",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/tos.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/sample.php?userid=1",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pic'%20+%20'check'%20+%20'.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695265069",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695351469",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695437869",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/recent.php",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/search.php?query=ZAP",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/tos.php",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/sample.php?userid=1",
+            "method": "GET",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "POST",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "POST",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "POST",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "POST",
+            "param": "x-frame-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "PHPSESSID",
+            "attack": "",
+            "evidence": "Set-Cookie: PHPSESSID",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "PHPSESSID",
+            "attack": "",
+            "evidence": "Set-Cookie: PHPSESSID",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695265069",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695351469",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695437869",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/cart/review.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/recent.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/search.php?query=ZAP",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/upload.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=10",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=11",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=12",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=13",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=14",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=15",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=7",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=8",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=9",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/tos.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/home.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/logout.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/sample.php?userid=1",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "X-Powered-By: PHP/5.5.9-1ubuntu4.29",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695265069",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695351469",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695437869",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/cart/review.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/blueprint/ie.css",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/blueprint/print.css",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/blueprint/screen.css",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/stylings.css",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/etc/dictionaries-common/words",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/images/search_button_white.gif",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pic",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/recent.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/search.php?query=ZAP",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/upload.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=10",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=11",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=12",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=13",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=14",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=15",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=7",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=8",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/view.php?picid=9",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/robots.txt",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/sitemap.xml",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/tos.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/doggie/Dog.jpg.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/flowers/flowers.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/flowers/flweofoee.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/house/hodjjgld.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/house/My_House.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/house/our_house.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/toga/togas.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/toga/togasfs.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/waterfall/Waterfall.128_128.jpg",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/home.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/logout.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/sample.php?userid=1",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pic'%20+%20'check'%20+%20'.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "POST",
+            "param": "",
+            "attack": "",
+            "evidence": "Apache/2.4.7 (Ubuntu)",
+            "otherinfo": ""
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "1695265069",
+            "otherinfo": "1695265069, which evaluates to: 2023-09-21 09:57:49"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695265069",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "1695351469",
+            "otherinfo": "1695351469, which evaluates to: 2023-09-22 09:57:49"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695351469",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "1695437869",
+            "otherinfo": "1695437869, which evaluates to: 2023-09-23 09:57:49"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695437869",
+            "method": "GET",
+            "param": "",
+            "attack": "",
+            "evidence": "1695524269",
+            "otherinfo": "1695524269, which evaluates to: 2023-09-24 09:57:49"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695265069",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695351469",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/calendar.php?date=1695437869",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/blueprint/ie.css",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/blueprint/print.css",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/blueprint/screen.css",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/css/stylings.css",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/images/search_button_white.gif",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/recent.php",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/search.php?query=ZAP",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/tos.php",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/doggie/Dog.jpg.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/flowers/flowers.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/flowers/flweofoee.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/house/hodjjgld.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/house/My_House.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/house/our_house.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/toga/togas.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/toga/togasfs.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/upload/waterfall/Waterfall.128_128.jpg",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/sample.php?userid=1",
+            "method": "GET",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/admin/index.php?page=login",
+            "method": "POST",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/guestbook.php",
+            "method": "POST",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/passcheck.php",
+            "method": "POST",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/register.php",
+            "method": "POST",
+            "param": "x-content-type-options",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "POST",
+            "param": "username",
+            "attack": "",
+            "evidence": "password",
+            "otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=http://127.0.0.1:8082/users/login.php"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/sample.php?userid=1",
+            "method": "GET",
+            "param": "userid",
+            "attack": "",
+            "evidence": "userid",
+            "otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nuserid"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "PHPSESSID",
+            "attack": "",
+            "evidence": "1mbl7eor1naueq8s258t4ehj57",
+            "otherinfo": "\ncookie:PHPSESSID"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "PHPSESSID",
+            "attack": "",
+            "evidence": "cusrv57sfbhcjs3c2gh1uc0390",
+            "otherinfo": "\ncookie:PHPSESSID"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/users/login.php",
+            "method": "GET",
+            "param": "PHPSESSID",
+            "attack": "",
+            "evidence": "1mbl7eor1naueq8s258t4ehj57",
+            "otherinfo": "\ncookie:PHPSESSID"
+        },
+        {
+            "uri": "http://127.0.0.1:8082/pictures/search.php?query=ZAP",
+            "method": "GET",
+            "param": "query",
+            "attack": "",
+            "evidence": "",
+            "otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttp://127.0.0.1:8082/pictures/search.php?query=ZAP\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nquery=ZAP\r\n\r\nThe user-controlled value was:\r\nzap"
+        }
+    ]
+}

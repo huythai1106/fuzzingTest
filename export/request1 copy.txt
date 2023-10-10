@@ -1,0 +1,32 @@
+POST http://FUZZ1/FUZZ1/index.php?page=FUZZ5 HTTP/1.1
+host: 127.0.0.1
+user-agent: FUZZ6
+pragma: no-cache
+cache-control: no-cache
+content-type: FUZZ6
+referer: FUZZ6
+content-length: 26
+Cookie: PHPSESSID=t3t4jeer7rjfkqahd5abnon3m7
+
+adminname=FUZZBODY&password=FUZZBODY
+GET http://FUZZ1/FUZZ1/index.php?page=FUZZ5 HTTP/1.1
+host: 127.0.0.1
+user-agent: FUZZ6
+pragma: no-cache
+cache-control: no-cache
+content-length: 26
+Cookie: PHPSESSID=t3t4jeer7rjfkqahd5abnon3m7
+GET http://FUZZ1/FUZZ1/index.php?page=FUZZ5 HTTP/1.1
+host: 127.0.0.1
+user-agent: FUZZ6
+pragma: no-cache
+cache-control: no-cache
+content-length: 26
+Cookie: PHPSESSID=t3t4jeer7rjfkqahd5abnon
+GET http://FUZZ1/FUZZ1/index.php?page=FUZZ5 HTTP/1.1
+host: 127.0.0.1
+user-agent: FUZZ6
+pragma: no-cache
+cache-control: no-cache
+content-length: 26
+Cookie: PHPSESSID=t3t4jeer7rjfkqahd5abnon
