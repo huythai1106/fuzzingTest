@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { URL } = require("./urlclass");
+const { httpMessage } = require("./httpMessage");
 
 const handleProcess = (folderName) => {
   fs.readdir(`${folderName}`, (err, files) => {
@@ -43,7 +43,7 @@ const handleProcessFile = (folderName, fileName) => {
 
     for (let i = 0; i < mapHeaderURL.length; i++) {
       // console.log(aaa.exportUrl(aaa.url, aaa.typeFuzz));
-      let aaa = new URL(mapHeaderURL[i]);
+      let aaa = new httpMessage(mapHeaderURL[i]);
       // console.log(aaa.exportFuzzHeader());
       stringExport += aaa.exportFuzzHeader();
     }

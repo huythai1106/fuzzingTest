@@ -12,7 +12,7 @@ const checkContain = (arrayString, originString) => {
   return false;
 };
 
-class URL {
+class httpMessage {
   rawHeader;
   url;
   method;
@@ -101,6 +101,7 @@ class URL {
     this.method = requestLines[0].split(" ")[0];
 
     this.analysisUrl(this.url);
+
     // feilds
     let fields = requestLines.slice(1);
 
@@ -259,5 +260,5 @@ class URL {
 }
 
 module.exports = {
-  URL,
+  httpMessage,
 };
