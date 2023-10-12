@@ -1,0 +1,717 @@
+GET https://courses.uet.vnu.edu.vn/ HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Language: en-US,en;q=0.9
+
+
+GET https://courses.uet.vnu.edu.vn/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: text/css,*/*;q=0.1
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: style
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/jquery.php/theme_lambda/jquery.easing.min.1.4.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/jquery.php/core/jquery-3.6.0.min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/javascript.php/1697086803/lib/polyfills/polyfill.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/jquery.php/theme_lambda/carousel.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/javascript.php/1697086803/lib/javascript-static.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: text/css,*/*;q=0.1
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: style
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/jquery.php/theme_lambda/camera_slideshow.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/javascript.php/1697086803/lib/requirejs/require.min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/core/1697086803/a/search HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/javascript.php/lambda/1697086803/footer HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/core/1697086803/i/navigationitem HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/5/user/icon/lambda/f1?rev=325687 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/1/theme_lambda/logo/1697086803/logo-new.jpg HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/forum/1697086803/monologo HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/core/1697086803/i/course HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/yui_combo.php?m/1697086803/core/event/event-min.js&m/1697086803/filter_mathjaxloader/loader/loader-min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/theme/1697086803/bg/block-divider HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/1/theme_lambda/fonts_file_body/1697086803/Roboto-Medium.ttf HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Origin: https://courses.uet.vnu.edu.vn
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: font
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/yui_combo.php?3.17.2/cssbutton/cssbutton-min.css HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: text/css,*/*;q=0.1
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: style
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/core/1697086803/t/collapsed HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/theme/1697086803/bg/icon-search HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/theme/1697086803/slider/camera_skins HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/theme/1697086803/slider/camera-loader HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/theme/1697086803/bg/login HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/core/1697086803/t/expanded HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/core/1697086803/t/collapsed_empty HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/image.php/lambda/theme/1697086803/bg/category-bg HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/yui_combo.php?m/1697086803/core/widget/widget-focusafterclose-min.js&3.17.2/plugin/plugin-min.js&m/1697086803/core/lockscroll/lockscroll-min.js&m/1697086803/core/notification/notification-dialogue-min.js&m/1697086803/core/tooltip/tooltip-min.js&m/1697086803/core/popuphelp/popuphelp-min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/font.php/lambda/core/1697086803/fontawesome-webfont.woff2?v= HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Origin: https://courses.uet.vnu.edu.vn
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: font
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/1/theme_lambda/slide1image/1697086803/10605-11.jpg HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/theme/yui_combo.php?m/1697086803/course/categoryexpander/categoryexpander-min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/1/theme_lambda/fonts_file_headings/1697086803/OpenSans-Medium.ttf HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Origin: https://courses.uet.vnu.edu.vn
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: font
+Referer: https://courses.uet.vnu.edu.vn/theme/styles.php/lambda/1697086803_1/all
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/1/theme_lambda/slide2image/1697086803/banner-web-2020-01.jpg HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/requirejs.php/1697086803/core/first.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/requirejs.php/1697086803/core_form/events.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/javascript.php/1697086803/lib/jquery/jquery-3.6.0.min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+POST https://courses.uet.vnu.edu.vn/lib/ajax/service.php?sesskey=VFlH4VKAvD&info=media_videojs_get_language HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+Content-Length: 76
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Origin: https://courses.uet.vnu.edu.vn
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+[{"index":0,"methodname":"media_videojs_get_language","args":{"lang":"en"}}]
+
+
+GET https://courses.uet.vnu.edu.vn/theme/yui_combo.php?3.17.2/event-mousewheel/event-mousewheel-min.js&3.17.2/event-resize/event-resize-min.js&3.17.2/event-hover/event-hover-min.js&3.17.2/event-touch/event-touch-min.js&3.17.2/event-move/event-move-min.js&3.17.2/event-flick/event-flick-min.js&3.17.2/event-valuechange/event-valuechange-min.js&3.17.2/event-tap/event-tap-min.js HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/1/theme_lambda/favicon/1697086803/captiveportal-logo2_new.png HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/ajax/service-nologin.php?info=core_output_load_template_with_dependencies,core_output_load_template_with_dependencies,core_output_load_template_with_dependencies,core_output_load_template_with_dependencies&cachekey=1697086803&args=%5B%7B%22index%22%3A0%2C%22methodname%22%3A%22core_output_load_template_with_dependencies%22%2C%22args%22%3A%7B%22component%22%3A%22core%22%2C%22template%22%3A%22loading%22%2C%22themename%22%3A%22lambda%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A1%2C%22methodname%22%3A%22core_output_load_template_with_dependencies%22%2C%22args%22%3A%7B%22component%22%3A%22core%22%2C%22template%22%3A%22modal%22%2C%22themename%22%3A%22lambda%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A2%2C%22methodname%22%3A%22core_output_load_template_with_dependencies%22%2C%22args%22%3A%7B%22component%22%3A%22core%22%2C%22template%22%3A%22modal_backdrop%22%2C%22themename%22%3A%22lambda%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A3%2C%22methodname%22%3A%22core_output_load_template_with_dependencies%22%2C%22args%22%3A%7B%22component%22%3A%22core%22%2C%22template%22%3A%22pix_icon%22%2C%22themename%22%3A%22lambda%22%2C%22lang%22%3A%22en%22%7D%7D%5D HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/lib/ajax/service-nologin.php?info=6-method-calls&cachekey=1697086803&args=%5B%7B%22index%22%3A0%2C%22methodname%22%3A%22core_get_string%22%2C%22args%22%3A%7B%22stringid%22%3A%22cancel%22%2C%22stringparams%22%3A%5B%5D%2C%22component%22%3A%22core%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A1%2C%22methodname%22%3A%22core_get_string%22%2C%22args%22%3A%7B%22stringid%22%3A%22closebuttontitle%22%2C%22stringparams%22%3A%5B%5D%2C%22component%22%3A%22core%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A2%2C%22methodname%22%3A%22core_get_string%22%2C%22args%22%3A%7B%22stringid%22%3A%22loading%22%2C%22stringparams%22%3A%5B%5D%2C%22component%22%3A%22core%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A3%2C%22methodname%22%3A%22core_get_string%22%2C%22args%22%3A%7B%22stringid%22%3A%22savechanges%22%2C%22stringparams%22%3A%5B%5D%2C%22component%22%3A%22core%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A4%2C%22methodname%22%3A%22core_get_string%22%2C%22args%22%3A%7B%22stringid%22%3A%22showless%22%2C%22stringparams%22%3A%5B%5D%2C%22component%22%3A%22core_form%22%2C%22lang%22%3A%22en%22%7D%7D%2C%7B%22index%22%3A5%2C%22methodname%22%3A%22core_get_string%22%2C%22args%22%3A%7B%22stringid%22%3A%22showmore%22%2C%22stringparams%22%3A%5B%5D%2C%22component%22%3A%22core_form%22%2C%22lang%22%3A%22en%22%7D%7D%5D HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/117.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://courses.uet.vnu.edu.vn/
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+

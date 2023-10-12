@@ -59,19 +59,19 @@ class httpMessage {
       value: [],
       dictionaries: ["xss", "number", "text"],
     },
-    "user-agent": {
+    "User-Agent": {
       isFuzz: true,
       type: "FUZZ6",
       value: [],
       dictionaries: [],
     },
-    "content-type": {
+    "Content-Type": {
       isFuzz: true,
       type: "FUZZ6",
       value: [],
       dictionaries: [],
     },
-    referer: {
+    Referer: {
       isFuzz: true,
       type: "FUZZ6",
       value: [],
@@ -91,13 +91,13 @@ class httpMessage {
 
     let requestLines = header.split("\n");
 
-    if (requestLines[requestLines.length - 1] === "") {
-      requestLines = requestLines.slice(0, -1);
-    }
-
     // URL
+    if (requestLines[0] === "") {
+      requestLines.shift();
+    }
     this.requestLine = requestLines[0];
     this.url = requestLines[0].split(" ")[1];
+
     this.method = requestLines[0].split(" ")[0];
 
     this.analysisUrl(this.url);
@@ -105,15 +105,20 @@ class httpMessage {
     // feilds
     let fields = requestLines.slice(1);
 
-    if (requestLines.includes("\r")) {
-      // have body data
-      this.bodyRaw = requestLines[requestLines.length - 1];
+    if (requestLines[requestLines.length - 1] === "\r") {
+      requestLines.pop();
+      this.isHasBody = false;
+    } else {
       this.isHasBody = true;
+      this.bodyRaw = requestLines[requestLines.length - 1];
       fields = fields.slice(0, -2);
     }
 
+    fields.pop();
+
     fields.forEach((line) => {
       const s = line.split(":");
+
       key[s[0]] = s[1].trim();
 
       if (s[0] === "content-type") {
@@ -137,6 +142,7 @@ class httpMessage {
   };
 
   analysisUrl = (url) => {
+    // console.log(url);
     let argArr;
     if (url.includes("https")) {
       argArr = url.slice(8).split("/");
@@ -151,7 +157,9 @@ class httpMessage {
         while ((match = regex.exec(arg)) !== null) {
           const key = match[1];
           const value = match[2];
-          this.typeFuzz.query.value.push({ key, value });
+          if (value) {
+            this.typeFuzz.query.value.push({ key, value });
+          }
         }
       } else if (checkContain(topDomain, arg)) {
         this.typeFuzz.url.value.push(arg);
@@ -210,10 +218,12 @@ class httpMessage {
           }
         } else {
           for (let i = 0; i < this.typeFuzz[key].value.length; i++) {
-            newUrl = newUrl.replace(
-              this.typeFuzz[key].value[i],
-              this.typeFuzz[key].type
-            );
+            if (this.typeFuzz[key].value[i]) {
+              newUrl = newUrl.replace(
+                this.typeFuzz[key].value[i],
+                this.typeFuzz[key].type
+              );
+            }
           }
         }
       }

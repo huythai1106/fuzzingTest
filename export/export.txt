@@ -1,0 +1,716 @@
+GET https://courses.uet.vnu.edu.vn/ HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: FUZZ6
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Language: en-US,en;q=0.9
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/yui_combo.php?rollup/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: text/css,*/*;q=0.1
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: style
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/jquery.php/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/jquery.php/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/javascript.php/FUZZ3/FUZZ1/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/jquery.php/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/yui_combo.php?rollup/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/javascript.php/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/styles.php/FUZZ1/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: text/css,*/*;q=0.1
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: style
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/jquery.php/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/javascript.php/FUZZ3/FUZZ1/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/imFUZZ1ge.php/FUZZ1/FUZZ1/FUZZ3/a/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/javascript.php/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/FUZZ1mage.php/FUZZ1/FUZZ1/FUZZ3/i/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/FUZZ3/FUZZ1/FUZZ1/FUZZ1/f1?rev=FUZZ5 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/FUZZ3/FUZZ1/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://FUZZ1s.uet.vnu.edu.vn/FUZZ1/FUZZ1mage.php/FUZZ1/FUZZ1/FUZZ3/i/course HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/yui_combo.php?m/FUZZ3/FUZZ1/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/FUZZ3/FUZZ1/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Origin: https
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: font
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/yui_combo.php?3.17.2/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: text/css,*/*;q=0.1
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: style
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET hFUZZ1tps://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/t/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET hFUZZ1tps://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/t/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET hFUZZ1tps://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/t/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/image.php/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/yui_combo.php?m/FUZZ3/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1/FUZZ1/FUZZ3/FUZZ1/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/font.php/FUZZ1/FUZZ1/FUZZ3/fontawesome-webfont.woff2?v= HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Origin: https
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: font
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/FUZZ3/FUZZ1/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://FUZZ1s.uet.vnu.edu.vn/FUZZ1/yui_combo.php?m/FUZZ3/course/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/FUZZ3/FUZZ1/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Origin: https
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: font
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/FUZZ3/FUZZ1/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/requirejs.php/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/requirejs.php/FUZZ3/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/javascript.php/FUZZ3/FUZZ1/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+POST https://courses.uet.vnu.edu.vn/FUZZ1/FUZZ1/service.php?sesskey=FUZZ5&info=FUZZ5 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+Content-Length: 76
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: FUZZ6
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Origin: https
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+
+[{"index":0,"methodname":"media_videojs_get_language","args":{"lang":"en"}}]
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/yui_combo.php?3.17.2/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: script
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/pluginfile.php/FUZZ3/FUZZ1/FUZZ1/FUZZ3/FUZZ1 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/FUZZ1/service-nologin.php?info=FUZZ5&cachekey=FUZZ5&args=FUZZ5 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: FUZZ6
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
+GET https://courses.uet.vnu.edu.vn/FUZZ1/FUZZ1/service-nologin.php?info=FUZZ5&cachekey=FUZZ5&args=FUZZ5 HTTP/1.1
+host: courses.uet.vnu.edu.vn
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="117", "Not;A=Brand";v="8", "Chromium";v="117"
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: FUZZ6
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: FUZZ6
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: FUZZ6
+Accept-Language: en-US,en;q=0.9
+Cookie: MoodleSession=m77osp872meih1t0l7cacilt3t
+
+
