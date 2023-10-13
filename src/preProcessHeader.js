@@ -1,6 +1,7 @@
 const fs = require("fs");
 const { httpMessage } = require("./httpMessage");
 const { separateRequest } = require("../utils/index");
+const { compareRequest } = require("../utils/compareRequest")
 
 const handleProcess = (folderName) => {
   fs.readdir(`${folderName}`, (err, files) => {
@@ -25,6 +26,17 @@ const handleProcessFile = (folderName, fileName) => {
     let mapHeaderURL = separateRequest(data);
 
     let stringExport = "";
+
+    for(let i = 0; i < mapHeaderURL.length; i++) {
+      for(let j = i - 1; j >= 0; j--) {
+        if(compareRequest(mapHeaderURL[i], mapHeaderURL[j])) {
+          mapHeaderURL.splice(j, 1);
+          j--;
+          i--;
+          break;
+        }
+      }
+    }
 
     for (let i = 0; i < mapHeaderURL.length; i++) {
       if (mapHeaderURL[i]) {

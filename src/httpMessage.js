@@ -80,6 +80,7 @@ class httpMessage {
   };
 
   isHasBody = false;
+  isFuzzed = false;
 
   constructor(header) {
     this.rawHeader = header;
@@ -225,6 +226,7 @@ class httpMessage {
               this.typeFuzz[key].value[i].value,
               this.typeFuzz[key].type
             );
+            this.isFuzzed = true;
           }
         } else {
           for (let i = 0; i < this.typeFuzz[key].value.length; i++) {
@@ -233,6 +235,7 @@ class httpMessage {
                 this.typeFuzz[key].value[i],
                 this.typeFuzz[key].type
               );
+              this.isFuzzed = true;
             }
           }
         }
@@ -250,6 +253,7 @@ class httpMessage {
       } else {
         headersString += `${key}: ${this.objFields[key]}\n`;
       }
+      this.isFuzzed = true;
     }
 
     return headersString;
@@ -259,6 +263,7 @@ class httpMessage {
     let newBody = this.bodyRaw;
     for (let key in this.bodyData) {
       newBody = newBody.replace(this.bodyData[key], "FUZZBODY");
+      this.isFuzzed = true;
     }
 
     return newBody;
@@ -273,6 +278,10 @@ class httpMessage {
 
     if (this.isHasBody) {
       headerFuzz += "\n" + this.exportBody() + "\n";
+    }
+
+    if(!this.isFuzzed) {
+      return "";
     }
 
     return headerFuzz;
