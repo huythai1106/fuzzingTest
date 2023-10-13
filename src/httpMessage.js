@@ -92,9 +92,18 @@ class httpMessage {
     let requestLines = header.split("\n");
 
     // URL
-    if (requestLines[0] === "") {
+    if (
+      requestLines[0] === "" ||
+      requestLines[0] === "\n" ||
+      requestLines[0] === "\r"
+    ) {
       requestLines.shift();
     }
+
+    if (requestLines[requestLines.length - 1] === "") {
+      requestLines.pop();
+    }
+
     this.requestLine = requestLines[0];
     this.url = requestLines[0].split(" ")[1];
 
@@ -142,7 +151,8 @@ class httpMessage {
   };
 
   analysisUrl = (url) => {
-    // console.log(url);
+    if (!url) {
+    }
     let argArr;
     if (url.includes("https")) {
       argArr = url.slice(8).split("/");

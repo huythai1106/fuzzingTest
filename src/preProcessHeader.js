@@ -27,9 +27,11 @@ const handleProcessFile = (folderName, fileName) => {
     let stringExport = "";
 
     for (let i = 0; i < mapHeaderURL.length; i++) {
-      let aaa = new httpMessage(mapHeaderURL[i]);
-      // console.log(aaa.exportFuzzHeader());
-      stringExport += aaa.exportFuzzHeader() + "\n\n";
+      if (mapHeaderURL[i]) {
+        let aaa = new httpMessage(mapHeaderURL[i]);
+        // console.log(aaa.exportFuzzHeader());
+        stringExport += aaa.exportFuzzHeader() + "\n\n";
+      }
     }
 
     // console.log(stringExport);
