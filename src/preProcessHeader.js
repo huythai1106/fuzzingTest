@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { httpMessage } = require("./httpMessage");
 const { separateRequest } = require("../utils/index");
-const { compareRequest } = require("../utils/compareRequest")
+const { compareRequest } = require("../utils/compareRequest");
 
 const handleProcess = (folderName) => {
   fs.readdir(`${folderName}`, (err, files) => {
@@ -25,22 +25,44 @@ const handleProcessFile = (folderName, fileName) => {
     }
     let mapHeaderURL = separateRequest(data);
 
+    let requestsURLFuzz = [];
+
     let stringExport = "";
 
-    for(let i = 0; i < mapHeaderURL.length; i++) {
-      for(let j = i - 1; j >= 0; j--) {
-        if(compareRequest(mapHeaderURL[i], mapHeaderURL[j])) {
-          mapHeaderURL.splice(j, 1);
-          j--;
-          i--;
-          break;
-        }
-      }
-    }
+    // for (let i = 0; i < mapHeaderURL.length; i++) {
+    //   for (let j = i - 1; j >= 0; j--) {
+    //     if (compareRequest(mapHeaderURL[i], mapHeaderURL[j])) {
+    //       mapHeaderURL.splice(j, 1);
+    //       j--;
+    //       i--;
+    //       break;
+    //     }
+    //   }
+    // }
+
+    console.time("Execution time");
 
     for (let i = 0; i < mapHeaderURL.length; i++) {
-      if (mapHeaderURL[i]) {
-        let aaa = new httpMessage(mapHeaderURL[i]);
+      if (requestsURLFuzz.length === 0) {
+        requestsURLFuzz.push(mapHeaderURL[i]);
+      } else {
+        let check = true;
+        for (let j = 0; j < requestsURLFuzz.length; j++) {
+          if (compareRequest(mapHeaderURL[i], requestsURLFuzz[j])) {
+            check = false;
+
+            break;
+          }
+        }
+
+        check && requestsURLFuzz.push(mapHeaderURL[i]);
+      }
+    }
+    console.timeEnd("Execution time");
+
+    for (let i = 0; i < requestsURLFuzz.length; i++) {
+      if (requestsURLFuzz[i]) {
+        let aaa = new httpMessage(requestsURLFuzz[i]);
         // console.log(aaa.exportFuzzHeader());
         stringExport += aaa.exportFuzzHeader() + "\n\n";
       }
