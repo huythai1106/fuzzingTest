@@ -59,24 +59,6 @@ class httpMessage {
       value: [],
       dictionaries: ["xss", "number", "text"],
     },
-    "User-Agent": {
-      isFuzz: true,
-      type: "FUZZ6",
-      value: [],
-      dictionaries: [],
-    },
-    "Content-Type": {
-      isFuzz: true,
-      type: "FUZZ6",
-      value: [],
-      dictionaries: [],
-    },
-    Referer: {
-      isFuzz: true,
-      type: "FUZZ6",
-      value: [],
-      dictionaries: [],
-    },
   };
 
   isHasBody = false;
@@ -280,7 +262,7 @@ class httpMessage {
       headerFuzz += "\n" + this.exportBody() + "\n";
     }
 
-    if(!this.isFuzzed) {
+    if (!this.isFuzzed) {
       return "";
     }
 
