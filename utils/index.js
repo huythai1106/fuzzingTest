@@ -1,4 +1,6 @@
-const list = {
+const fs = require("fs");
+
+const listCommon = {
   common: [
     "method",
     "lang",
@@ -6,21 +8,19 @@ const list = {
     "password",
     "user",
     "email",
+    "username",
     "pwd",
     "pass",
   ],
-  method: {
-    dic: [],
-    value: [],
-  },
-  lang: {
-    dic: [],
-    value: [],
-  },
-  module: {
-    dic: [],
-    value: [],
-  },
+  method: "method",
+  lang: "lang",
+  module: "module",
+  user: "username",
+  email: "username",
+  username: "username",
+  password: "password",
+  pwd: "password",
+  pass: "password",
 };
 
 const separateRequest = (out) => {
@@ -41,6 +41,21 @@ const separateRequest = (out) => {
   });
 
   return arrRequest;
+};
+
+const checkContain = (arrayString, originString) => {
+  for (let i = 0; i < arrayString.length; i++) {
+    if (originString.includes(arrayString[i])) {
+      return {
+        value: arrayString[i],
+        status: true,
+      };
+    }
+  }
+  return {
+    value: null,
+    status: false,
+  };
 };
 
 const mutatedString = (inputString, numMutations = 100) => {
@@ -94,7 +109,11 @@ const getKeyValue = (jsonData) => {
         if (typeof value === "object") {
           if (Array.isArray(value)) {
             // console.log(`Key: ${key}, Type: array, Length: ${value.length}`);
-            objValue.push({ Key: key, Type: "array", Length: value.length });
+            objValue.push({
+              Key: key,
+              Type: "array",
+              Length: value.length,
+            });
           } else {
             // console.log(`Key: ${key}, Type: ${typeof value}`);
             objValue.push({ Key: key, Type: typeof value });
@@ -102,24 +121,41 @@ const getKeyValue = (jsonData) => {
           setKeyValue(value);
         } else {
           objValue.push({
+            mutateValue: [],
             Key: key,
-            Value: JSON.stringify(value),
-            Type: typeof JSON.stringify(value),
+            Value: value,
+            Type: typeof value,
           });
         }
       }
     }
   };
 
-  jsonData.forEach((item) => {
-    setKeyValue(item);
-  });
+  if (Array.isArray(jsonData)) {
+    jsonData.forEach((item) => {
+      setKeyValue(item);
+    });
+  } else {
+    setKeyValue(jsonData);
+  }
 
   return objValue;
+};
+
+const getValueFile = (fileName) => {
+  const value = fs.readFileSync(fileName, {
+    encoding: "utf8",
+    flag: "r",
+  });
+
+  return value;
 };
 
 module.exports = {
   separateRequest,
   mutatedString,
   getKeyValue,
+  listCommon,
+  checkContain,
+  getValueFile,
 };

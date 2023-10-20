@@ -1,16 +1,8 @@
 const querystring = require("querystring");
 const parseString = require("xml2js").parseString;
+const { checkContain } = require("../utils/index");
 
 const topDomain = [".com", ".vn", ".net", ".org"];
-
-const checkContain = (arrayString, originString) => {
-  for (let i = 0; i < arrayString.length; i++) {
-    if (originString.includes(arrayString[i])) {
-      return true;
-    }
-  }
-  return false;
-};
 
 class httpMessage {
   rawHeader;
@@ -21,6 +13,8 @@ class httpMessage {
   requestLine;
   typeBody;
   objFields = {};
+  listRequestFuzz = [];
+  listBodyFuzz = [];
 
   typeFuzz = {
     url: {
@@ -58,6 +52,9 @@ class httpMessage {
       type: "FUZZ5",
       value: [],
       dictionaries: ["xss", "number", "text"],
+    },
+    json: {
+      type: "FUZZJSON",
     },
   };
 
@@ -154,7 +151,7 @@ class httpMessage {
             this.typeFuzz.query.value.push({ key, value });
           }
         }
-      } else if (checkContain(topDomain, arg)) {
+      } else if (checkContain(topDomain, arg).status) {
         this.typeFuzz.url.value.push(arg);
       } else if (!isNaN(arg)) {
         this.typeFuzz.number.value.push(arg);
@@ -268,6 +265,8 @@ class httpMessage {
 
     return headerFuzz;
   };
+
+  getListBoduFuzz = () => {};
 }
 
 module.exports = {
