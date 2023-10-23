@@ -1,10 +1,11 @@
-import { readFile, readFolder } from "src/helpers/file"
+import path from "path"
+import { readFile, readFolder } from "../helpers/file"
 import HTTPRequest from "./HTTPRequest"
 
 export default class HTTPRequestManager {
     private httpRequests: HTTPRequest[]
 
-    public constructor(input: string, separation: string) {
+    public constructor() {
         this.httpRequests = []
     }
 
@@ -29,25 +30,17 @@ export default class HTTPRequestManager {
     public setRequestsByFolder(folderPath: string, separation: string) {
         const fileNames = readFolder(folderPath)
         for (const file of fileNames) {
-            this.setRequestsByFile(file, separation)
+            this.setRequestsByFile(path.join(folderPath, file), separation)
         }
     }
 
     public removeDuplicatedHTTPRequests() {
         const httpMsgMap = new Map()
         for (const httpMessage of this.httpRequests) {
-            const jsonData = {
-                method: httpMessage.getStartLine().method,
-                protocol: httpMessage.getStartLine().protocol,
-                domain: httpMessage.getStartLine().domain,
-                port: httpMessage.getStartLine().port,
-                referer: httpMessage.getHeaders()['Referer'],
-                contentType: httpMessage.getHeaders()['Content-Type'],
-            }
-            if (httpMsgMap.has(JSON.stringify(jsonData))) {
+            if (httpMsgMap.has(httpMessage.toString())) {
                 continue
             }
-            httpMsgMap.set(JSON.stringify(jsonData), httpMessage)
+            httpMsgMap.set(httpMessage.toString(), httpMessage)
         }
 
         this.httpRequests = []
@@ -57,7 +50,7 @@ export default class HTTPRequestManager {
     }
 
     public view() {
-        this.httpRequests.forEach(item => item.view())
+        this.httpRequests.forEach(item => console.log(item.toString()))
     }
 
     public getHTTPRequests() {

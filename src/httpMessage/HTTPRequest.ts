@@ -1,19 +1,13 @@
+import * as constants from './constants'
+
 class StartLine {
-    fullValue!: string
     method!: string
-    protocol!: string
-    domain!: string
-    port?: number | undefined
-    path!: string
-    queries?: string
-    fragment?: string
+    url!: URL
     protocolVersion!: string
 }
 
 export default class HTTPRequest {
-    private static startLineRegex: RegExp = /^(?<method>GET|HEAD|POST|PUT|DELETE|OPTIONS|PATCH) (?:(?<protocol>https|http):\/\/(?<domain>(?:[-\d\w]+\.)+[-\d\w]+)(:(?<port>\d+))*)?(?<path>(?:\/[^\#\?\s]*)*)*(?:\?(?<queries>(?:[-\d\w\/_\.]+[-=\d\w\/_\.]*\&?)*))?(?:#(?<fragment>[\w\d-_%~]*))*(?: (?<protocol_version>HTTP\/[\d\.]+))?$/g
     private static headerRegex: RegExp = /(?<header_key>[\w-]+)\s*:\s*(?<header_value>.*)/g
-    private static queryRegex: RegExp = /a/g
 
     private startLine!: StartLine
     private headers!: { [key: string]: string }
@@ -34,7 +28,6 @@ export default class HTTPRequest {
             if (error != null) {
                 return error
             }
-            
             error = this.analyzeHeaders(requestLines)
             if (error != null) {
                 return error
@@ -45,32 +38,30 @@ export default class HTTPRequest {
                 return error
             }
         }
-
+        
         return null
     }
 
     private analyzeStartLine(requestLines: string[]): Error | null {
         this.startLine = {} as StartLine
-        this.startLine.fullValue = requestLines[0]
-        if (!HTTPRequest.startLineRegex.test(this.startLine.fullValue)) {
-            return new Error(`Invalid start-line: ${this.startLine.fullValue}`)
-        }
-        HTTPRequest.startLineRegex.lastIndex = 0
 
-        const matches = [...this.startLine.fullValue.matchAll(HTTPRequest.startLineRegex)]
-        const { method, protocol, domain, port, path, queries, fragment, protocol_version }: { [key: string]: string } = matches[0].groups!
-        this.startLine = {
-            fullValue: this.startLine.fullValue,
-            method: method,
-            protocol: protocol,
-            domain: domain,
-            port: Number(port) || undefined,
-            path: path,
-            queries: queries,
-            fragment: fragment,
-            protocolVersion: protocol_version,
+        const startLinePortions = requestLines[0].split(' ');
+        if (startLinePortions.length !== 3) {
+            return new Error(`Invalid start-line ${requestLines[0]}`)
         }
 
+        this.startLine.method = startLinePortions[0]
+        if (!constants.PERMITTED_METHODS.includes(this.startLine.method)) {
+            return new Error(`Method ${this.startLine.method} is not allowed`)
+        }
+
+        try {
+            this.startLine.url = new URL(startLinePortions[1])
+        } catch (error) {
+            return new Error(`Invalid url: ${startLinePortions[1]}`)
+        }
+
+        this.startLine.protocolVersion = startLinePortions[2]
         return null
     }
 
@@ -110,23 +101,6 @@ export default class HTTPRequest {
         return !!this.body
     }
 
-    public IsSame(other: HTTPRequest): boolean {
-        if (this.startLine.method !== other.startLine.method) return true
-        if (this.startLine.protocol !== other.startLine.protocol) return true
-        if (this.startLine.domain !== other.startLine.domain) return true
-        if (this.startLine.port !== other.startLine.port) return true
-        if (this.headers['Referer'] !== other.headers['Referer']) return true
-        if (this.headers['Content-Type'] !== other.headers['Content-Type']) return true
-        return false
-    }
-
-    public view() {
-        console.log(`\n\x1b[34mREQUEST: \x1b[0m${this.startLine.fullValue}`,)
-        console.log('\x1b[34mStartLine => \x1b[0m', this.startLine)
-        console.log('\x1b[34mHeaders => \x1b[0m', this.headers)
-        console.log('\x1b[34mBody => \x1b[0m', this.body)
-    }
-
     public getStartLine() {
         return { ...this.startLine }
     }
@@ -140,5 +114,9 @@ export default class HTTPRequest {
             return null
         }
         return this.body
+    }
+
+    public toString() {
+        return `${this.startLine.method}.${this.startLine.url.protocol}${this.startLine.url.host}${this.startLine.url.pathname}.${this.headers['Content-Type'] || ""}`
     }
 }

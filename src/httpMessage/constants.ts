@@ -1,0 +1,1 @@
+export const PERMITTED_METHODS = ['POST', 'PATCH', 'PUT', 'GET', 'DELETE', 'UPDATE', 'OPTION', 'TRACE', 'CONNECT', 'HEAD']
