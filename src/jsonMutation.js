@@ -33,10 +33,13 @@ class JsonMutation {
         obj.mutateValue.push(...value);
       } else if (checkContain(listCommon.common, obj.Key).status) {
         // do something with
-        const value = getValueFile(
-          `./dictionaries/${checkContain(listCommon.common, obj.Key).value}.txt`
-        ).split(/\n/);
-        obj.mutateValue.push(...value);
+        const value = checkContain(listCommon.common, obj.Key).value;
+        const dic = listCommon[value].dic;
+
+        const mutateValue = getValueFile(`./dictionaries/${dic}.txt`).split(
+          /\n/
+        );
+        obj.mutateValue.push(...mutateValue);
       } else if (obj.Type === "boolean") {
         obj.mutateValue.push("true", "false");
       } else if (obj.Type === "string") {

@@ -12,15 +12,42 @@ const listCommon = {
     "pwd",
     "pass",
   ],
-  method: "method",
-  lang: "lang",
-  module: "module",
-  user: "username",
-  email: "username",
-  username: "username",
-  password: "password",
-  pwd: "password",
-  pass: "password",
+  method: {
+    dic: "method",
+    rank: 0,
+  },
+  lang: {
+    dic: "lang",
+    rank: 0,
+  },
+  module: {
+    dic: "module",
+    rank: 0,
+  },
+  user: {
+    dic: "username",
+    rank: 0,
+  },
+  email: {
+    dic: "username",
+    rank: 0,
+  },
+  username: {
+    dic: "username",
+    rank: 0,
+  },
+  password: {
+    dic: "password",
+    rank: 0,
+  },
+  pwd: {
+    dic: "password",
+    rank: 0,
+  },
+  pass: {
+    dic: "password",
+    rank: 0,
+  },
 };
 
 const separateRequest = (out) => {
