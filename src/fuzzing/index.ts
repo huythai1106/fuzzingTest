@@ -24,7 +24,10 @@ export default class Fuzzer {
             throw new Error("You do not set any requests yet.")
         }
 
+        // with queries
         
+
+        // with body
     }
 
     public startFuzzAttack() {
