@@ -19,13 +19,15 @@ export default class Fuzzer {
     /**
      * Auto detect which is used to fuzz.
      */
-    public AutoDetectFuzzLocation() {
+    public autoDetectFuzzLocation() {
         if (!this.httpRequestManager || this.httpRequestManager.getHTTPRequests().length === 0) {
             throw new Error("You do not set any requests yet.")
         }
+
+        
     }
 
-    public startFuzzerAttack() {
+    public startFuzzAttack() {
 
     }
 }

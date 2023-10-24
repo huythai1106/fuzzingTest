@@ -110,10 +110,7 @@ export default class HTTPRequest {
     }
 
     public getBody() {
-        if (!this.hasBody()) {
-            return null
-        }
-        return this.body
+        return this.body || null
     }
 
     public toString() {
