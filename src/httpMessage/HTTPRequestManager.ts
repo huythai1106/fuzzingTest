@@ -43,10 +43,7 @@ export default class HTTPRequestManager {
             httpMsgMap.set(httpMessage.toString(), httpMessage)
         }
 
-        this.httpRequests = []
-        for (const [_, value] of httpMsgMap) {
-            this.httpRequests.push(value)
-        }
+        this.httpRequests = [...httpMsgMap.values()]
     }
 
     public view() {
