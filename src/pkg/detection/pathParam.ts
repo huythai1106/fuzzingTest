@@ -1,7 +1,8 @@
-import HTTPRequest from "src/httpMessage/HTTPRequest"
+import { removeEmpty } from "../../helpers/utils";
+import HTTPRequest from "../../httpMessage/HTTPRequest"
 
 export default function detectPotentialPathParam(request: HTTPRequest){
-    const pathParams = request.getStartLine().url.pathname.split('/').filter(item => item.trim())
+    const pathParams = request.getStartLine().url.pathname.split('/').filter(removeEmpty)
     const option: { [key: string]: any } = {
         method: request.getStartLine().method,
         headers: request.getHeaders()

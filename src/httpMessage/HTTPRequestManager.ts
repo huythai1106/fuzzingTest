@@ -46,9 +46,9 @@ export default class HTTPRequestManager {
         this.httpRequests = [...httpMsgMap.values()]
     }
 
-    public autoDetectFuzzLocation() {
+    public async autoDetectFuzzLocation() {
         for (const req of this.httpRequests) {
-            req.autoFuzz()
+            await req.autoDetectFuzzLocation()
         }
     }
 

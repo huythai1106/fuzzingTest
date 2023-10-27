@@ -1,6 +1,8 @@
 import * as constants from './constants'
 import detectType, { TYPE_ALIAS } from '../pkg/detection/type'
 import { FuzzingLocationsAlias } from './constants'
+import detectPotentialPathParam from '../pkg/detection/pathParam'
+import { removeEmpty } from '../helpers/utils'
 
 class StartLine {
     method!: string
@@ -108,18 +110,12 @@ export default class HTTPRequest {
         return null
     }
 
-    public autoDetectFuzzUrl() {
+    public async autoDetectFuzzUrl() {
         // detect path param
+        const potentialPathParam = (await detectPotentialPathParam(this)).filter(removeEmpty)
         const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!
-        const paths = this.startLine.url.pathname.split('/');
-        for (const path of paths) {
-            if (!path.trim()) {
-                continue
-            }
+        for (const path of potentialPathParam) {
             const pathType = detectType(path)
-            if (pathType == TYPE_ALIAS.STRING) {
-                continue
-            }
             fuzzingPathParam.push({
                 key: path,
                 value: path,
@@ -143,16 +139,17 @@ export default class HTTPRequest {
     }
 
     public autoDetectFuzzBody(): Error | null {
+        console.log("Fuzz body")
         return null
     }
 
 
     /**
-     * Fuzz all
+     * Combination of autoDetectFuzzUrl and autoDetectFuzzBody.
      */
-    public autoFuzz() {
-        this.autoDetectFuzzUrl()
-        this.autoDetectFuzzBody()
+    public async autoDetectFuzzLocation() {
+        await this.autoDetectFuzzUrl()
+        await this.autoDetectFuzzBody()
     }
 
     public getFuzzingLocation(alias: FuzzingLocationsAlias) {
@@ -162,10 +159,6 @@ export default class HTTPRequest {
             return initiation
         }
         return this.fuzzingLocations.get(alias)
-    }
-
-    public a() {
-        return this.fuzzingLocations
     }
 
     public hasBody(): boolean {
