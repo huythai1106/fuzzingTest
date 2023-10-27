@@ -1,9 +1,18 @@
 import * as constants from './constants'
+import detectType, { TYPE_ALIAS } from '../pkg/detection/type'
+import { FuzzingLocationsAlias } from './constants'
 
 class StartLine {
     method!: string
     url!: URL
     protocolVersion!: string
+}
+
+class fuzzingLocationDetail {
+    key!: any
+    value!: any
+    type!: TYPE_ALIAS
+    dictionaries!: TYPE_ALIAS[]
 }
 
 export default class HTTPRequest {
@@ -12,10 +21,12 @@ export default class HTTPRequest {
     private startLine!: StartLine
     private headers!: { [key: string]: string }
     private body?: any | undefined
+    private fuzzingLocations!: Map<FuzzingLocationsAlias, fuzzingLocationDetail[]>
     
     public constructor(request: string) {
         const error = this.analyzeHTTPRequest(request.trim())
         if (error != null) throw error
+        this.fuzzingLocations = new Map()
     }
 
     private analyzeHTTPRequest(request: string): Error | null {
@@ -95,6 +106,66 @@ export default class HTTPRequest {
         const bodyLines = requestLines.slice(emptyIndex + 1)
         this.body = bodyLines.join('\n').trim()
         return null
+    }
+
+    public autoDetectFuzzUrl() {
+        // detect path param
+        const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!
+        const paths = this.startLine.url.pathname.split('/');
+        for (const path of paths) {
+            if (!path.trim()) {
+                continue
+            }
+            const pathType = detectType(path)
+            if (pathType == TYPE_ALIAS.STRING) {
+                continue
+            }
+            fuzzingPathParam.push({
+                key: path,
+                value: path,
+                type: pathType,
+                dictionaries: [pathType]
+            } as fuzzingLocationDetail)
+        }
+
+        // detect queries
+        const fuzzingQueries = this.getFuzzingLocation(FuzzingLocationsAlias.QUERY)!
+        const queries = this.startLine.url.searchParams
+        for (const [key, value] of queries.entries()) {
+            const queryType = detectType(value)
+            fuzzingQueries.push({
+                key: key,
+                value: value,
+                type: queryType,
+                dictionaries: [queryType]
+            } as fuzzingLocationDetail)
+        }
+    }
+
+    public autoDetectFuzzBody(): Error | null {
+        return null
+    }
+
+
+    /**
+     * Fuzz all
+     */
+    public autoFuzz() {
+        this.autoDetectFuzzUrl()
+        this.autoDetectFuzzBody()
+    }
+
+    public getFuzzingLocation(alias: FuzzingLocationsAlias) {
+        if (!this.fuzzingLocations.has(alias) || !this.fuzzingLocations.get(alias)) {
+            const initiation: fuzzingLocationDetail[] = []
+            this.fuzzingLocations.set(alias, initiation)
+            return initiation
+        }
+        return this.fuzzingLocations.get(alias)
+    }
+
+    public a() {
+        return this.fuzzingLocations
     }
 
     public hasBody(): boolean {

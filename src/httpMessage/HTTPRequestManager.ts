@@ -46,6 +46,12 @@ export default class HTTPRequestManager {
         this.httpRequests = [...httpMsgMap.values()]
     }
 
+    public autoDetectFuzzLocation() {
+        for (const req of this.httpRequests) {
+            req.autoFuzz()
+        }
+    }
+
     public view() {
         this.httpRequests.forEach(item => console.log(item.toString()))
     }

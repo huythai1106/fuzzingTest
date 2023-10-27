@@ -1,3 +1,4 @@
+import HTTPRequest from "src/httpMessage/HTTPRequest";
 import HTTPRequestManager from "src/httpMessage/HTTPRequestManager";
 import HTTPResponseManager from "src/httpMessage/HTTPResponseManager";
 
@@ -16,6 +17,14 @@ export default class Fuzzer {
         this.httpResponseManager = httpResponseManager
     }
 
+    private autoDetectFuzzStartLine(request: HTTPRequest) {
+        
+    }
+
+    private autoDetectFuzzBody(request: HTTPRequest) {
+
+    }
+
     /**
      * Auto detect which is used to fuzz.
      */
@@ -24,10 +33,11 @@ export default class Fuzzer {
             throw new Error("You do not set any requests yet.")
         }
 
-        // with queries
-        
-
-        // with body
+        const requests = this.httpRequestManager?.getHTTPRequests()!
+        for (const request of requests) {
+            this.autoDetectFuzzStartLine(request)
+            this.autoDetectFuzzBody(request)
+        }
     }
 
     public startFuzzAttack() {
