@@ -18,7 +18,7 @@ export default function detectPotentialPathParam(request: HTTPRequest){
         promises.push(new Promise((resolve, reject) => {
             fetch(testUrl)
                 .then(res => {
-                    if (res.status === 200) {
+                    if (res.status >= 200 && res.status < 300) {
                         return resolve(pathParams[i])
                     }
                     return resolve('')
