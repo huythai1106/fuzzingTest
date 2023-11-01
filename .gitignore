@@ -5,3 +5,6 @@ trash
 
 src/fuzzing/resources/*
 src/fuzzing/exports/*
+
+build
+dist

@@ -1,9 +1,21 @@
+import JsonMutation from "./body/Json";
 import * as constants from "./constants";
+import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
+import { FuzzingLocationsAlias } from "./constants";
+import detectPotentialPathParam from "../pkg/detection/pathParam";
+import { removeEmpty } from "../helpers/utils";
 
 class StartLine {
   method!: string;
   url!: URL;
   protocolVersion!: string;
+}
+
+class fuzzingLocationDetail {
+  key!: any;
+  value!: any;
+  type!: TYPE_ALIAS;
+  dictionaries!: TYPE_ALIAS[];
 }
 
 export default class HTTPRequest {
@@ -13,12 +25,17 @@ export default class HTTPRequest {
   private startLine!: StartLine;
   private headers!: { [key: string]: string };
   private body?: any | undefined;
+  private fuzzingLocations!: Map<
+    FuzzingLocationsAlias,
+    fuzzingLocationDetail[]
+  >;
 
   public constructor(request: string) {
-    console.log([request]);
+    // console.log([request]);
 
     const error = this.analyzeHTTPRequest(request.trim());
     if (error != null) throw error;
+    this.fuzzingLocations = new Map();
   }
 
   private analyzeHTTPRequest(request: string): Error | null {
@@ -41,7 +58,6 @@ export default class HTTPRequest {
         return error;
       }
     }
-
     return null;
   }
 
@@ -92,6 +108,65 @@ export default class HTTPRequest {
 
     return null;
   }
+  public async autoDetectFuzzUrl() {
+    // detect path param
+    const potentialPathParam = (await detectPotentialPathParam(this)).filter(
+      removeEmpty
+    );
+    const fuzzingPathParam = this.getFuzzingLocation(
+      FuzzingLocationsAlias.PATH
+    )!;
+    for (const path of potentialPathParam) {
+      const pathType = detectType(path);
+      fuzzingPathParam.push({
+        key: path,
+        value: path,
+        type: pathType,
+        dictionaries: [pathType],
+      } as fuzzingLocationDetail);
+    }
+
+    // detect queries
+    const fuzzingQueries = this.getFuzzingLocation(
+      FuzzingLocationsAlias.QUERY
+    )!;
+
+    const queries = this.startLine.url.searchParams;
+    for (const [key, value] of queries.entries()) {
+      const queryType = detectType(value);
+      fuzzingQueries.push({
+        key: key,
+        value: value,
+        type: queryType,
+        dictionaries: [queryType],
+      } as fuzzingLocationDetail);
+    }
+  }
+
+  public autoDetectFuzzBody(): Error | null {
+    console.log("Fuzz body");
+    return null;
+  }
+
+  /**
+   * Combination of autoDetectFuzzUrl and autoDetectFuzzBody.
+   */
+  public async autoDetectFuzzLocation() {
+    await this.autoDetectFuzzUrl();
+    await this.autoDetectFuzzBody();
+  }
+
+  public getFuzzingLocation(alias: FuzzingLocationsAlias) {
+    if (
+      !this.fuzzingLocations.has(alias) ||
+      !this.fuzzingLocations.get(alias)
+    ) {
+      const initiation: fuzzingLocationDetail[] = [];
+      this.fuzzingLocations.set(alias, initiation);
+      return initiation;
+    }
+    return this.fuzzingLocations.get(alias);
+  }
 
   /**Currently always return null */
   private analyzeBody(requestLines: string[]): Error | null {
@@ -101,6 +176,7 @@ export default class HTTPRequest {
     }
     const bodyLines = requestLines.slice(emptyIndex + 1);
     this.body = bodyLines.join("\n").trim();
+
     return null;
   }
 
@@ -123,6 +199,8 @@ export default class HTTPRequest {
   public toString() {
     return `${this.startLine.method}.${this.startLine.url.protocol}${
       this.startLine.url.host
-    }${this.startLine.url.pathname}.${this.headers["Content-Type"] || ""}`;
+    }${this.startLine.url.pathname}.${this.headers["Content-Type"] || ""}.${
+      this.headers["Referer"] || ""
+    }`;
   }
 }

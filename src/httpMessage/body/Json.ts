@@ -1,11 +1,11 @@
-import { elememtObj } from "src/helpers";
+import { elememtObj } from "../../helpers";
 import {
   Contexts,
   getKeyValueInObject,
   isIncludeInArray,
   mutatedString,
 } from "../../helpers/utils";
-import { readFile } from "src/helpers/file";
+import { readFile } from "../../helpers/file";
 
 export default class JsonMutation {
   jsonData: string;
@@ -13,8 +13,9 @@ export default class JsonMutation {
 
   mutationJsonDatas: Array<any> = [];
   keyValues: elememtObj[] = [];
+  path: string = "src/fuzzing/dictionaries";
 
-  private constructor(jsonData: string) {
+  public constructor(jsonData: string) {
     this.jsonData = jsonData;
     this.jsonObject = JSON.parse(this.jsonData);
     this.init();
@@ -30,14 +31,14 @@ export default class JsonMutation {
     console.log(this.keyValues);
     this.keyValues.forEach((obj) => {
       if (obj.Type === "number") {
-        const value = readFile("./dictionaries/number.txt").split(/\n/);
+        const value = readFile(`${this.path}/number.txt`).split(/\n/);
         obj.mutateValue?.push(...value);
       } else if (isIncludeInArray(Contexts.common, obj.Key).status) {
         // do something with
         const value = isIncludeInArray(Contexts.common, obj.Key).value;
         const dic = (Contexts as any)[value].dic;
 
-        const mutateValue = readFile(`./dictionaries/${dic}.txt`).split(/\n/);
+        const mutateValue = readFile(`${this.path}/${dic}.txt`).split(/\n/);
         obj.mutateValue?.push(...mutateValue);
       } else if (obj.Type === "boolean") {
         obj.mutateValue?.push("true", "false");

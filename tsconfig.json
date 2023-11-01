@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
       "target": "es5",                          
-      // "module": "NodeNext",                    
-      // "lib": ["ESNext"],                     
+      "module": "CommonJS",
       "allowJs": true,
       "outDir": "build",                          
       "baseUrl": ".",
