@@ -117,7 +117,7 @@ export default class HTTPRequest {
         for (const path of potentialPathParam) {
             const pathType = detectType(path)
             fuzzingPathParam.push({
-                key: path,
+                key: undefined,
                 value: path,
                 type: pathType,
                 dictionaries: [pathType]

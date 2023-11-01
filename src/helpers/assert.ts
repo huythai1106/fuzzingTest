@@ -1,7 +1,8 @@
 import moment from 'moment'
 
 export const isNumber = (input: string): boolean => {
-    return /^\d+$/g.test(input)
+    if (['', '[]', null].includes(input)) return false
+    return !isNaN(Number(input))
 }
 
 export const isUUID = (input: string): boolean => {
