@@ -1,15 +1,11 @@
+import HTTPRequest from "src/httpMessage/HTTPRequest";
 import { elememtObj } from "../../helpers";
-import {
-  Contexts,
-  getKeyValueInObject,
-  isIncludeInArray,
-  mutatedString,
-} from "../../helpers/utils";
+import { Contexts, getKeyValueInObject, isIncludeInArray, mutatedString } from "../../helpers/utils";
 import { readFile } from "../../helpers/file";
 
 export default class JsonMutation {
   jsonData: string;
-  jsonObject;
+  jsonObject: Object;
 
   mutationJsonDatas: Array<any> = [];
   keyValues: elememtObj[] = [];
@@ -28,23 +24,25 @@ export default class JsonMutation {
 
   private createKeyValue() {
     this.keyValues = getKeyValueInObject(this.jsonObject);
-    console.log(this.keyValues);
+
     this.keyValues.forEach((obj) => {
-      if (obj.Type === "number") {
+      if (obj.type === "number") {
         const value = readFile(`${this.path}/number.txt`).split(/\n/);
         obj.mutateValue?.push(...value);
-      } else if (isIncludeInArray(Contexts.common, obj.Key).status) {
+      } else if (isIncludeInArray(Contexts.common, obj.key).status) {
         // do something with
-        const value = isIncludeInArray(Contexts.common, obj.Key).value;
+        const value = isIncludeInArray(Contexts.common, obj.key).value;
         const dic = (Contexts as any)[value].dic;
+        obj.dictionaries?.push(dic);
 
         const mutateValue = readFile(`${this.path}/${dic}.txt`).split(/\n/);
         obj.mutateValue?.push(...mutateValue);
-      } else if (obj.Type === "boolean") {
+      } else if (obj.type === "boolean") {
         obj.mutateValue?.push("true", "false");
-      } else if (obj.Type === "string") {
+      } else if (obj.type === "string") {
         // do something
-        const value = mutatedString(obj.Value, 20);
+
+        const value = mutatedString(obj.value, 20);
         obj.mutateValue?.push(...value);
       }
     });
@@ -58,9 +56,7 @@ export default class JsonMutation {
 
       keyValues.forEach((obj: any) => {
         if (obj.mutateValue && obj.mutateValue.length > 0) {
-          const randomValue = Math.floor(
-            Math.random() * obj.mutateValue.length
-          );
+          const randomValue = Math.floor(Math.random() * obj.mutateValue.length);
           let value = obj.mutateValue[randomValue];
           jsontmp = jsontmp.replace(obj.Value, value);
           obj.mutateValue.splice(randomValue, 1);
@@ -83,5 +79,37 @@ export default class JsonMutation {
 
   public getMutation() {
     return this.mutationJsonDatas;
+  }
+
+  public fuzzingBody(request: HTTPRequest) {
+    const url = request.getStartLine().url;
+
+    let promises: Promise<any>[] = [];
+    for (let i = 0; i < this.mutationJsonDatas.length; i++) {
+      promises.push(
+        fetch(url.href, {
+          method: request.getStartLine().method,
+          referrer: request.getHeaders()["Referrer"],
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: this.mutationJsonDatas[i],
+        })
+          .then((res) => {
+            // console.log(res.status, res.json());
+            return {
+              url: url.href,
+              status: res.status,
+              body: this.mutationJsonDatas[i],
+              response: res.json(),
+            };
+          })
+          .catch((error) => {
+            return error;
+          })
+      );
+    }
+
+    return Promise.all(promises);
   }
 }

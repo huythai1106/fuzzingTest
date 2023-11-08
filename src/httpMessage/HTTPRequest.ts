@@ -1,9 +1,12 @@
+import HTTPRequestManager from "src/httpMessage/HTTPRequestManager";
 import JsonMutation from "./body/Json";
 import * as constants from "./constants";
 import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
 import { FuzzingLocationsAlias } from "./constants";
 import detectPotentialPathParam from "../pkg/detection/pathParam";
 import { removeEmpty } from "../helpers/utils";
+import { makeRequest, sendRequest } from "../helpers";
+import { readFile } from "../helpers/file";
 
 class StartLine {
   method!: string;
@@ -19,22 +22,22 @@ class fuzzingLocationDetail {
 }
 
 export default class HTTPRequest {
-  private static headerRegex: RegExp =
-    /(?<header_key>[\w-]+)\s*:\s*(?<header_value>.*)/g;
+  private static headerRegex: RegExp = /(?<header_key>[\w-]+)\s*:\s*(?<header_value>.*)/g;
 
   private startLine!: StartLine;
   private headers!: { [key: string]: string };
   private body?: any | undefined;
-  private fuzzingLocations!: Map<
-    FuzzingLocationsAlias,
-    fuzzingLocationDetail[]
-  >;
+  private typeBody?: constants.TypeBody | undefined;
+  private fuzzingLocations!: Map<FuzzingLocationsAlias, fuzzingLocationDetail[]>;
 
-  public constructor(request: string) {
+  private httpRequestManager: HTTPRequestManager;
+
+  public constructor(request: string, HTTPRequestManager: HTTPRequestManager) {
     // console.log([request]);
-
+    this.httpRequestManager = HTTPRequestManager;
     const error = this.analyzeHTTPRequest(request.trim());
     if (error != null) throw error;
+    this.httpRequestManager.getHttpLogs().set(this.startLine.url.href, []);
     this.fuzzingLocations = new Map();
   }
 
@@ -88,10 +91,7 @@ export default class HTTPRequest {
     this.headers = {};
 
     const emptyIndex = requestLines.indexOf("");
-    const headers = requestLines.slice(
-      1,
-      emptyIndex !== -1 ? emptyIndex : requestLines.length
-    );
+    const headers = requestLines.slice(1, emptyIndex !== -1 ? emptyIndex : requestLines.length);
     for (const header of headers) {
       HTTPRequest.headerRegex.lastIndex = 0;
       if (!HTTPRequest.headerRegex.test(header)) {
@@ -101,8 +101,23 @@ export default class HTTPRequest {
 
       const headerMatcher = [...header.matchAll(HTTPRequest.headerRegex)][0];
       if (headerMatcher?.groups && headerMatcher.groups.header_key.trim()) {
-        this.headers[headerMatcher.groups.header_key.trim()] =
-          headerMatcher.groups.header_value.trim();
+        this.headers[headerMatcher.groups.header_key.trim()] = headerMatcher.groups.header_value.trim();
+      }
+    }
+
+    if (this.headers["Content-Type"]) {
+      switch (this.headers["Content-Type"]) {
+        case "application/x-www-form-urlencoded":
+          this.typeBody = constants.TypeBody.FORM;
+          break;
+        case "application/json":
+          this.typeBody = constants.TypeBody.JSON;
+          break;
+        case "application/xml":
+          this.typeBody = constants.TypeBody.XML;
+          break;
+        default:
+          this.typeBody = constants.TypeBody.NONE;
       }
     }
 
@@ -110,12 +125,8 @@ export default class HTTPRequest {
   }
   public async autoDetectFuzzUrl() {
     // detect path param
-    const potentialPathParam = (await detectPotentialPathParam(this)).filter(
-      removeEmpty
-    );
-    const fuzzingPathParam = this.getFuzzingLocation(
-      FuzzingLocationsAlias.PATH
-    )!;
+    const potentialPathParam = (await detectPotentialPathParam(this)).filter(removeEmpty);
+    const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!;
     for (const path of potentialPathParam) {
       const pathType = detectType(path);
       fuzzingPathParam.push({
@@ -127,9 +138,7 @@ export default class HTTPRequest {
     }
 
     // detect queries
-    const fuzzingQueries = this.getFuzzingLocation(
-      FuzzingLocationsAlias.QUERY
-    )!;
+    const fuzzingQueries = this.getFuzzingLocation(FuzzingLocationsAlias.QUERY)!;
 
     const queries = this.startLine.url.searchParams;
     for (const [key, value] of queries.entries()) {
@@ -143,9 +152,73 @@ export default class HTTPRequest {
     }
   }
 
-  public autoDetectFuzzBody(): Error | null {
-    console.log("Fuzz body");
+  public autoDetectFuzzBody() {
+    // console.log("Fuzz body");
+    if (this.hasBody()) {
+      if (this.typeBody === constants.TypeBody.JSON) {
+        const fuzzingBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY)!;
+
+        const json = new JsonMutation(this.body);
+        const keyValues = json.getKeyValue();
+
+        keyValues.forEach((obj) => {
+          if (obj.dictionaries && obj.dictionaries.length > 0) {
+            fuzzingBody.push({
+              dictionaries: obj.dictionaries as any,
+              key: obj.key,
+              type: obj.type as any,
+              value: obj.value,
+            });
+          }
+        });
+      }
+    }
     return null;
+  }
+
+  public async fuzzingRequest() {
+    this.fuzzingUrl();
+    await this.fuzzingBody();
+  }
+
+  public fuzzingUrl() {}
+
+  public async fuzzingBody() {
+    const fuzzingBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY)!;
+    if (fuzzingBody.length !== 0) {
+      for (const obj of fuzzingBody) {
+        // send request to server
+        let values: any[] = [];
+        obj.dictionaries.forEach((dic) => {
+          values = [...values, ...readFile(`${constants.DICTIONATY_PATH}/${dic}.txt`).split(/\r\n/)];
+        });
+        values.forEach(async (v) => {
+          let newBody = this.body;
+
+          newBody = newBody.replace(obj.value, v);
+          const r = makeRequest(this, {
+            body: newBody,
+          });
+
+          const response = sendRequest(r);
+          let res: any = await response;
+          let json = await res.json();
+          this.httpRequestManager.getHttpLogs().get(this.startLine.url.href)?.push({
+            status: res.status,
+            body: newBody,
+            json: json,
+          });
+
+          console.log("fuzzing");
+          console.log("---------------");
+          console.log({
+            status: res.status,
+            body: newBody,
+            json: json,
+          });
+        });
+      }
+    }
   }
 
   /**
@@ -157,10 +230,7 @@ export default class HTTPRequest {
   }
 
   public getFuzzingLocation(alias: FuzzingLocationsAlias) {
-    if (
-      !this.fuzzingLocations.has(alias) ||
-      !this.fuzzingLocations.get(alias)
-    ) {
+    if (!this.fuzzingLocations.has(alias) || !this.fuzzingLocations.get(alias)) {
       const initiation: fuzzingLocationDetail[] = [];
       this.fuzzingLocations.set(alias, initiation);
       return initiation;
@@ -196,11 +266,22 @@ export default class HTTPRequest {
     return this.body || null;
   }
 
+  public getTypeBody() {
+    return this.typeBody;
+  }
+
   public toString() {
-    return `${this.startLine.method}.${this.startLine.url.protocol}${
-      this.startLine.url.host
-    }${this.startLine.url.pathname}.${this.headers["Content-Type"] || ""}.${
-      this.headers["Referer"] || ""
-    }`;
+    return `${this.startLine.method}.${this.startLine.url.protocol}${this.startLine.url.host}${this.startLine.url.pathname}.${this.headers["Content-Type"] || ""}.${this.headers["Referer"] || ""}`;
+  }
+
+  public headerToString() {
+    let string = "";
+    for (const header in this.headers) {
+      if (this.headers.hasOwnProperty(header)) {
+        string += header + ": " + this.headers[header] + "\n";
+      }
+    }
+
+    return string;
   }
 }

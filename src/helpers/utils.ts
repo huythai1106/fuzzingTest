@@ -1,17 +1,7 @@
 import { elememtObj } from ".";
 
 const Contexts = {
-  common: [
-    "method",
-    "lang",
-    "module",
-    "password",
-    "user",
-    "email",
-    "username",
-    "pwd",
-    "pass",
-  ],
+  common: ["method", "lang", "module", "password", "user", "email", "username", "pwd", "pass"],
   method: {
     dic: "method",
     rank: 0,
@@ -60,28 +50,18 @@ const mutatedString = (inputString: string, numMutations = 100) => {
 
     for (let j = 0; j < numChanges; j++) {
       const randomIndex = Math.floor(Math.random() * mutatedString.length);
-      const randomChar = String.fromCharCode(
-        Math.floor(Math.random() * 26) + 97
-      );
+      const randomChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 
       const mutationType = Math.floor(Math.random() * 3);
       if (mutationType === 0) {
         // Thay thế
-        mutatedString =
-          mutatedString.slice(0, randomIndex) +
-          randomChar +
-          mutatedString.slice(randomIndex + 1);
+        mutatedString = mutatedString.slice(0, randomIndex) + randomChar + mutatedString.slice(randomIndex + 1);
       } else if (mutationType === 1) {
         // Chèn
-        mutatedString =
-          mutatedString.slice(0, randomIndex) +
-          randomChar +
-          mutatedString.slice(randomIndex);
+        mutatedString = mutatedString.slice(0, randomIndex) + randomChar + mutatedString.slice(randomIndex);
       } else {
         // Xóa
-        mutatedString =
-          mutatedString.slice(0, randomIndex) +
-          mutatedString.slice(randomIndex + 1);
+        mutatedString = mutatedString.slice(0, randomIndex) + mutatedString.slice(randomIndex + 1);
       }
     }
 
@@ -106,7 +86,7 @@ const isIncludeInArray = (arrayString: Array<any>, originString: string) => {
   };
 };
 
-const getKeyValueInObject = (jsonData: string) => {
+const getKeyValueInObject = (jsonData: object) => {
   const objValue: elememtObj[] = [];
 
   const setKeyValue = (obj: any) => {
@@ -115,23 +95,24 @@ const getKeyValueInObject = (jsonData: string) => {
         const value = obj[key];
         if (typeof value === "object") {
           if (Array.isArray(value)) {
-            // console.log(`Key: ${key}, Type: array, Length: ${value.length}`);
+            // console.log(`Key: ${key}, Type: arrayl Length: ${value.length}`);
             objValue.push({
-              Key: key,
-              Type: "array",
-              Length: value.length,
+              key: key,
+              type: "array",
+              length: value.length,
             });
           } else {
-            // console.log(`Key: ${key}, Type: ${typeof value}`);
-            objValue.push({ Key: key, Type: typeof value });
+            // console.log(`key: ${key}, type: ${typeof value}`);
+            objValue.push({ key: key, type: typeof value });
           }
           setKeyValue(value);
         } else {
           objValue.push({
             mutateValue: [],
-            Key: key,
-            Value: value,
-            Type: typeof value,
+            key: key,
+            value: value,
+            type: typeof value,
+            dictionaries: [typeof value],
           });
         }
       }
@@ -191,10 +172,7 @@ const compareRequest = (msg1: string, msg2: string) => {
   request1.forEach((line, index) => {
     if (request1[index].split(" ")[0] === "Content-Type:") {
       contentType1 = request1[index].split(" ")[1];
-    } else if (
-      request1[index].split(" ")[0] === "host:" ||
-      request1[index].split(" ")[0] === "Host:"
-    ) {
+    } else if (request1[index].split(" ")[0] === "host:" || request1[index].split(" ")[0] === "Host:") {
       host1 = request1[index].split(" ")[1];
     } else if (request1[index].split(" ")[0] === "Referer:") {
       referer1 = request1[index].split(" ")[1];
@@ -203,10 +181,7 @@ const compareRequest = (msg1: string, msg2: string) => {
   request2.forEach((line, index) => {
     if (request2[index].split(" ")[0] === "Content-Type:") {
       contentType2 = request2[index].split(" ")[1];
-    } else if (
-      request2[index].split(" ")[0] === "host:" ||
-      request2[index].split(" ")[0] === "Host:"
-    ) {
+    } else if (request2[index].split(" ")[0] === "host:" || request2[index].split(" ")[0] === "Host:") {
       host2 = request2[index].split(" ")[1];
     } else if (request2[index].split(" ")[0] === "Referer:") {
       referer2 = request2[index].split(" ")[1];
@@ -223,10 +198,4 @@ const compareRequest = (msg1: string, msg2: string) => {
   return true;
 };
 
-export {
-  Contexts,
-  isIncludeInArray,
-  mutatedString,
-  getKeyValueInObject,
-  compareRequest,
-};
+export { Contexts, isIncludeInArray, mutatedString, getKeyValueInObject, compareRequest };
