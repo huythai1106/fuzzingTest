@@ -16,7 +16,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "moment": "^2.29.4",
+    "log4js": "^6.9.1",
     "ts-node": "^10.9.1"
   }
 }
