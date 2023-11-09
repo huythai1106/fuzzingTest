@@ -1,7 +1,7 @@
 import * as constants from './constants'
 import detectType, { TYPE_ALIAS } from '../pkg/detection/type'
 import { FuzzingLocationsAlias } from './constants'
-import detectPotentialPathParam from '../pkg/detection/pathParam'
+import {detectPotentialPathParam} from '../pkg/detection/pathParam'
 import { removeEmpty } from '../helpers/utils'
 
 class StartLine {

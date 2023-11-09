@@ -1,5 +1,3 @@
-import moment from 'moment'
-
 export const isNumber = (input: string) => {
     if (['', '[]', null].includes(input)) return [false, input]
     return !isNaN(Number(input)) ? [true, Number(input)] : [false, input]
