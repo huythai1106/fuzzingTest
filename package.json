@@ -16,6 +16,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@turf/turf": "^6.5.0",
     "log4js": "^6.9.1",
     "ts-node": "^10.9.1"
   }

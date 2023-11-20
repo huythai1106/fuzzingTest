@@ -20,11 +20,4 @@ httpMessageManager.removeDuplicatedHTTPRequests();
 
 import PathParamDetection from "./pkg/detection/pathParam";
 
-const reqs = httpMessageManager.getHTTPRequests()
-
-for (let i = 0; i < reqs.length; i++) {
-    const r  = reqs[i]
-    console.log(i, r.getStartLine().method, r.getStartLine().url.href)
-}
-
-PathParamDetection.detect(reqs)
+PathParamDetection(httpMessageManager.getHTTPRequests())
