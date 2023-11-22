@@ -3,8 +3,6 @@ import JsonMutation from "./body/Json";
 import * as constants from "./constants";
 import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
 import { FuzzingLocationsAlias } from "./constants";
-import detectPotentialPathParam from "../pkg/detection/pathParam";
-import { removeEmpty } from "../helpers/utils";
 import { makeRequest, sendRequest } from "../helpers";
 import { readFile } from "../helpers/file";
 
@@ -120,22 +118,22 @@ export default class HTTPRequest {
           this.typeBody = constants.TypeBody.NONE;
       }
     }
-
+    
     return null;
   }
   public async autoDetectFuzzUrl() {
     // detect path param
-    const potentialPathParam = (await detectPotentialPathParam(this)).filter(removeEmpty);
-    const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!;
-    for (const path of potentialPathParam) {
-      const pathType = detectType(path);
-      fuzzingPathParam.push({
-        key: path,
-        value: path,
-        type: pathType,
-        dictionaries: [pathType],
-      } as fuzzingLocationDetail);
-    }
+    // const potentialPathParam = (await detectPotentialPathParam(this)).filter(removeEmpty);
+    // const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!;
+    // for (const path of potentialPathParam) {
+    //   const pathType = detectType(path);
+    //   fuzzingPathParam.push({
+    //     key: path,
+    //     value: path,
+    //     type: pathType,
+    //     dictionaries: [pathType],
+    //   } as fuzzingLocationDetail);
+    // }
 
     // detect queries
     const fuzzingQueries = this.getFuzzingLocation(FuzzingLocationsAlias.QUERY)!;
