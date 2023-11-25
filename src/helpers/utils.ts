@@ -95,14 +95,14 @@ const getKeyValueInObject = (jsonData: object) => {
         const value = obj[key];
         if (typeof value === "object") {
           if (Array.isArray(value)) {
-            // console.log(`Key: ${key}, Type: arrayl Length: ${value.length}`);
+            // console.log(Key: ${key}, Type: arrayl Length: ${value.length});
             objValue.push({
               key: key,
               type: "array",
               length: value.length,
             });
           } else {
-            // console.log(`key: ${key}, type: ${typeof value}`);
+            // console.log(key: ${key}, type: ${typeof value});
             objValue.push({ key: key, type: typeof value });
           }
           setKeyValue(value);
@@ -129,6 +129,31 @@ const getKeyValueInObject = (jsonData: object) => {
 
   return objValue;
 };
+
+const getKeyValueInString = (formData: string) => {
+  const objValue: elememtObj[] = [];
+  const params = new URLSearchParams(formData);
+  const keyValue: { key: string; value: string }[] = [];
+
+  params.forEach((value, key) => {
+    let newValue: any;
+    if (!isNaN(Number(value))) {
+      newValue = Number(value);
+    } else {
+      newValue = value;
+    }
+    objValue.push({
+      mutateValue: [],
+      key: key,
+      value: newValue,
+      type: typeof newValue,
+      dictionaries: [typeof newValue],
+    });
+  });
+
+
+  return objValue;
+}
 
 export const removeEmpty = (input: any) => {
   return !!input;
@@ -198,4 +223,4 @@ const compareRequest = (msg1: string, msg2: string) => {
   return true;
 };
 
-export { Contexts, isIncludeInArray, mutatedString, getKeyValueInObject, compareRequest };
+export { Contexts, isIncludeInArray, mutatedString, getKeyValueInObject, getKeyValueInString, compareRequest };

@@ -1,9 +1,12 @@
 import HTTPRequestManager from "src/httpMessage/HTTPRequestManager";
 import JsonMutation from "./body/Json";
+import FormMutation from "./body/Form";
 import * as constants from "./constants";
 import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
 import { FuzzingLocationsAlias } from "./constants";
-import { makeRequest, sendRequest } from "../helpers";
+import detectPotentialPathParam from "../pkg/detection/pathParam";
+import { removeEmpty } from "../helpers/utils";
+import { elememtObj, makeRequest, sendRequest } from "../helpers";
 import { readFile } from "../helpers/file";
 
 class StartLine {
@@ -153,23 +156,23 @@ export default class HTTPRequest {
   public autoDetectFuzzBody() {
     // console.log("Fuzz body");
     if (this.hasBody()) {
+      let keyValues: elememtObj[] = [];
+      const fuzzingBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY)!;
       if (this.typeBody === constants.TypeBody.JSON) {
-        const fuzzingBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY)!;
-
-        const json = new JsonMutation(this.body);
-        const keyValues = json.getKeyValue();
-
-        keyValues.forEach((obj) => {
-          if (obj.dictionaries && obj.dictionaries.length > 0) {
-            fuzzingBody.push({
-              dictionaries: obj.dictionaries as any,
-              key: obj.key,
-              type: obj.type as any,
-              value: obj.value,
-            });
-          }
-        });
+        keyValues = new JsonMutation(this.body).getKeyValue();
+      } else if (this.typeBody === constants.TypeBody.FORM) {
+        keyValues = new FormMutation(this.body).getKeyValue();
       }
+      keyValues.forEach((obj) => {
+        if (obj.dictionaries && obj.dictionaries.length > 0) {
+          fuzzingBody.push({
+            dictionaries: obj.dictionaries as any,
+            key: obj.key,
+            type: obj.type as any,
+            value: obj.value,
+          });
+        }
+      });
     }
     return null;
   }
@@ -210,9 +213,9 @@ export default class HTTPRequest {
           console.log("fuzzing");
           console.log("---------------");
           console.log({
-            status: res.status,
+            // status: res.status,
             body: newBody,
-            json: json,
+            // json: json,
           });
         });
       }

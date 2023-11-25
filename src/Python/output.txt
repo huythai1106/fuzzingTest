@@ -59,39 +59,15 @@ Sec-Fetch-Mode: cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://www.w3schools.com/lib/uic.js?v=1.0.5 HTTP/1.1
+GET https://www.w3schools.com/lib/w3schools32.css?v=1.0.1 HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
+Accept: text/css,*/*;q=0.1
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/python/python_conditions.asp
 Connection: keep-alive
-Sec-Fetch-Dest: script
+Sec-Fetch-Dest: style
 Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/fonts/source-code-pro-v14-latin-regular.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-700.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
 Sec-Fetch-Site: same-origin
 
 ~~~
@@ -107,19 +83,7 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-600.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/my-learning.js?v=1.0.23 HTTP/1.1
+GET https://www.w3schools.com/lib/uic.js?v=1.0.5 HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
@@ -131,19 +95,19 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://www.w3schools.com/lib/w3schools32.css?v=1.0.1 HTTP/1.1
+GET https://www.w3schools.com/lib/user-session.js?v=1.0.33 HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: text/css,*/*;q=0.1
+Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/python/python_conditions.asp
 Connection: keep-alive
-Sec-Fetch-Dest: style
+Sec-Fetch-Dest: script
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://www.w3schools.com/lib/user-session.js?v=1.0.33 HTTP/1.1
+GET https://www.w3schools.com/lib/my-learning.js?v=1.0.23 HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
@@ -167,30 +131,6 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://cdn.snigelweb.com/adengine/w3schools.com/loader.js HTTP/1.1
-host: cdn.snigelweb.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Connection: keep-alive
-Sec-Fetch-Dest: script
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: cross-site
-
-~~~
-GET https://www.w3schools.com/lib/fonts/SourceSansPro-Regular.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
 GET https://www.w3schools.com/lib/w3schools_footer.js?update=20230706 HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
@@ -203,15 +143,15 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://www.w3schools.com/signup/lynxlogo.svg HTTP/1.1
+GET https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-700.woff2 HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: image/avif,image/webp,*/*
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/python/python_conditions.asp
 Connection: keep-alive
-Sec-Fetch-Dest: image
-Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: font
+Sec-Fetch-Mode: cors
 Sec-Fetch-Site: same-origin
 
 ~~~
@@ -239,7 +179,19 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://www.w3schools.com/images/background_in_space.gif HTTP/1.1
+GET https://www.w3schools.com/lib/fonts/source-code-pro-v14-latin-regular.woff2 HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/python/python_conditions.asp
+Connection: keep-alive
+Sec-Fetch-Dest: font
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/signup/lynxlogo.svg HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: image/avif,image/webp,*/*
@@ -251,7 +203,31 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://www.w3schools.com/images/img_spaces_down_generic_python_160.png HTTP/1.1
+GET https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-600.woff2 HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/python/python_conditions.asp
+Connection: keep-alive
+Sec-Fetch-Dest: font
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/lib/fonts/SourceSansPro-Regular.woff2 HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/python/python_conditions.asp
+Connection: keep-alive
+Sec-Fetch-Dest: font
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/images/background_in_space.gif HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: image/avif,image/webp,*/*
@@ -287,30 +263,40 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://cdn.snigelweb.com/argus/argus.js HTTP/1.1
+GET https://cdn.snigelweb.com/adengine/w3schools.com/loader.js HTTP/1.1
 host: cdn.snigelweb.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: __cf_bm=JSDl0nRgluIsBeJhe64x.Jbb1m15ax77wEEK0whskGk-1700929118-0-ASZIko27xE1x4e8Ix/+iHfPzb8awRJ4qjK3YMLQIkTbxQWtgDAi2Bg+cBH+Q6nCWPdwBjGKj6skYHMkb5dRyCTY=
 Sec-Fetch-Dest: script
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
 
 ~~~
-GET https://cdn.snigelweb.com/prebid/7.53.0/prebid.js?v=8339-1700234105411 HTTP/1.1
-host: cdn.snigelweb.com
+GET https://www.w3schools.com/images/img_bf_down_160.png HTTP/1.1
+host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
+Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
+Referer: https://www.w3schools.com/python/python_conditions.asp
 Connection: keep-alive
-Cookie: __cf_bm=JSDl0nRgluIsBeJhe64x.Jbb1m15ax77wEEK0whskGk-1700929118-0-ASZIko27xE1x4e8Ix/+iHfPzb8awRJ4qjK3YMLQIkTbxQWtgDAi2Bg+cBH+Q6nCWPdwBjGKj6skYHMkb5dRyCTY=
-Sec-Fetch-Dest: script
+Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: cross-site
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/images/img_program_up_dataanalytics_160.png HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/python/python_conditions.asp
+Connection: keep-alive
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
 
 ~~~
 GET https://www.googletagmanager.com/gtm.js?id=GTM-KTCFC3S HTTP/1.1
@@ -325,6 +311,19 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
 
 ~~~
+GET https://cdn.snigelweb.com/prebid/7.53.0/prebid.js?v=8339-1700234105411 HTTP/1.1
+host: cdn.snigelweb.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Cookie: __cf_bm=7Feqvtk6k6pfDChegAFNGWuapohunk.5lcI0MG9U7aU-1700812295-0-AWJ5MXoC4lNlq0z7G71vBxpXmESiXWMzXYOF5DiDpM+VVtTEhdXsd7zHvy+g1D5FdeuifBc3DKBWit5NhymRiUA=
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: cross-site
+
+~~~
 GET https://adengine.snigelweb.com/w3schools.com/8339-1700234105411/adngin.js HTTP/1.1
 host: adengine.snigelweb.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
@@ -332,37 +331,26 @@ Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: __cf_bm=JSDl0nRgluIsBeJhe64x.Jbb1m15ax77wEEK0whskGk-1700929118-0-ASZIko27xE1x4e8Ix/+iHfPzb8awRJ4qjK3YMLQIkTbxQWtgDAi2Bg+cBH+Q6nCWPdwBjGKj6skYHMkb5dRyCTY=
+Cookie: __cf_bm=7Feqvtk6k6pfDChegAFNGWuapohunk.5lcI0MG9U7aU-1700812295-0-AWJ5MXoC4lNlq0z7G71vBxpXmESiXWMzXYOF5DiDpM+VVtTEhdXsd7zHvy+g1D5FdeuifBc3DKBWit5NhymRiUA=
 Sec-Fetch-Dest: script
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
 
 ~~~
-GET https://c.amazon-adsystem.com/aax2/apstag.js HTTP/1.1
-host: c.amazon-adsystem.com
+GET https://cdn.snigelweb.com/argus/argus.js HTTP/1.1
+host: cdn.snigelweb.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
+Cookie: __cf_bm=7Feqvtk6k6pfDChegAFNGWuapohunk.5lcI0MG9U7aU-1700812295-0-AWJ5MXoC4lNlq0z7G71vBxpXmESiXWMzXYOF5DiDpM+VVtTEhdXsd7zHvy+g1D5FdeuifBc3DKBWit5NhymRiUA=
 Sec-Fetch-Dest: script
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
 
 ~~~
 GET https://securepubads.g.doubleclick.net/tag/js/gpt.js HTTP/1.1
-host: securepubads.g.doubleclick.net
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Connection: keep-alive
-Sec-Fetch-Dest: script
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: cross-site
-
-~~~
-GET https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202311150101/pubads_impl.js?cb=31079745 HTTP/1.1
 host: securepubads.g.doubleclick.net
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
@@ -386,6 +374,18 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
 
 ~~~
+GET https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202311090101/pubads_impl.js HTTP/1.1
+host: securepubads.g.doubleclick.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: cross-site
+
+~~~
 GET https://cdn.confiant-integrations.net/prebid/202310231203/wrap.js HTTP/1.1
 host: cdn.confiant-integrations.net
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
@@ -398,33 +398,8 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
 
 ~~~
-GET https://www.w3schools.com/favicon-16x16.png HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: image/avif,image/webp,*/*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: image
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://static.criteo.net/js/ld/publishertag.ids.js HTTP/1.1
-host: static.criteo.net
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Connection: keep-alive
-Sec-Fetch-Dest: script
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: cross-site
-
-~~~
-GET https://cdn.prod.uidapi.com/uid2SecureSignal.js HTTP/1.1
-host: cdn.prod.uidapi.com
+GET https://c.amazon-adsystem.com/aax2/apstag.js HTTP/1.1
+host: c.amazon-adsystem.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
@@ -442,47 +417,23 @@ Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/python/python_conditions.asp
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
 Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
-GET https://c.amazon-adsystem.com/bao-csm/aps-comm/aps_csm.js HTTP/1.1
-host: c.amazon-adsystem.com
+GET https://www.w3schools.com/favicon-16x16.png HTTP/1.1
+host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
+Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Origin: https://www.w3schools.com
+Referer: https://www.w3schools.com/python/python_conditions.asp
 Connection: keep-alive
-Sec-Fetch-Dest: empty
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: cross-site
-
-~~~
-GET https://cdn.id5-sync.com/api/1.0/esp.js HTTP/1.1
-host: cdn.id5-sync.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Connection: keep-alive
-Sec-Fetch-Dest: script
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: cross-site
-
-~~~
-GET https://cdn.jsdelivr.net/gh/prebid/shared-id/pubcid.js/docs/pubcid.min.js HTTP/1.1
-host: cdn.jsdelivr.net
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: */*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Connection: keep-alive
-Sec-Fetch-Dest: script
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: cross-site
+Sec-Fetch-Site: same-origin
 
 ~~~
 GET https://script.4dex.io/localstore.js HTTP/1.1
@@ -509,8 +460,32 @@ Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
 
 ~~~
-GET https://cadmus.script.ac/dahhc4ozyvjm6/script.js HTTP/1.1
-host: cadmus.script.ac
+GET https://cdn.prod.uidapi.com/uid2SecureSignal.js HTTP/1.1
+host: cdn.prod.uidapi.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: cross-site
+
+~~~
+GET https://static.criteo.net/js/ld/publishertag.ids.js HTTP/1.1
+host: static.criteo.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: cross-site
+
+~~~
+GET https://cdn.jsdelivr.net/gh/prebid/shared-id/pubcid.js/docs/pubcid.min.js HTTP/1.1
+host: cdn.jsdelivr.net
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
@@ -534,95 +509,91 @@ Sec-Fetch-Mode: cors
 Sec-Fetch-Site: cross-site
 
 ~~~
-GET https://www.w3schools.com/lib/fonts/source-code-pro-v14-latin-regular.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/fonts/fontawesome.woff2?14663396 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-700.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/fonts/roboto-mono-v13-latin-500.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/fonts/source-sans-pro-v14-latin-600.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/lib/fonts/SourceSansPro-Regular.woff2 HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/python/python_conditions.asp
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://adengine.snigelweb.com/w3schools.com/8339-1700234105411/adngin.js HTTP/1.1
-host: adengine.snigelweb.com
+GET https://cdn.id5-sync.com/api/1.0/esp.js HTTP/1.1
+host: cdn.id5-sync.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
 Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: __cf_bm=JSDl0nRgluIsBeJhe64x.Jbb1m15ax77wEEK0whskGk-1700929118-0-ASZIko27xE1x4e8Ix/+iHfPzb8awRJ4qjK3YMLQIkTbxQWtgDAi2Bg+cBH+Q6nCWPdwBjGKj6skYHMkb5dRyCTY=
 Sec-Fetch-Dest: script
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: cross-site
+
+~~~
+GET https://c.amazon-adsystem.com/bao-csm/aps-comm/aps_csm.js HTTP/1.1
+host: c.amazon-adsystem.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Origin: https://www.w3schools.com
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+
+~~~
+GET https://cadmus.script.ac/dahhc4ozyvjm6/script.js HTTP/1.1
+host: cadmus.script.ac
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: cross-site
+
+~~~
+GET https://tags.crwdcntrl.net/lt/c/16589/sync.min.js HTTP/1.1
+host: tags.crwdcntrl.net
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: cross-site
+
+~~~
+GET https://cadmus.script.ac/dahhc4ozyvjm6/script.js HTTP/1.1
+host: cadmus.script.ac
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: */*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Sec-Fetch-Dest: script
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: cross-site
+
+~~~
+GET https://www.w3schools.com/images/img_bffullaccess_up_160.png HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/python/python_conditions.asp
+Connection: keep-alive
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/images/img_spaces_down_generic_160.png HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/python/python_conditions.asp
+Connection: keep-alive
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
 
 ~~~
 GET https://script.4dex.io/localstore.js HTTP/1.1
@@ -661,7 +632,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/w
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/python/python_conditions.asp
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Upgrade-Insecure-Requests: 1
 Sec-Fetch-Dest: document
 Sec-Fetch-Mode: navigate
@@ -669,16 +640,16 @@ Sec-Fetch-Site: same-origin
 Sec-Fetch-User: ?1
 
 ~~~
-GET https://www.w3schools.com/lib/fonts/fontawesome.woff2?14663396 HTTP/1.1
+GET https://www.w3schools.com/spaces/files/check3.db67d31e.svg HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: font
-Sec-Fetch-Mode: cors
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
 ~~~
@@ -689,21 +660,8 @@ Accept: */*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Sec-Fetch-Dest: script
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/spaces/files/check3.db67d31e.svg HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: image/avif,image/webp,*/*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
 
@@ -715,7 +673,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/w
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Upgrade-Insecure-Requests: 1
 Sec-Fetch-Dest: iframe
 Sec-Fetch-Mode: navigate
@@ -729,7 +687,7 @@ Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
@@ -742,20 +700,7 @@ Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/howto/tryhow_js_slideshow_ifr.htm
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: image
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: same-origin
-
-~~~
-GET https://www.w3schools.com/howto/img_mountains_wide.jpg HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: image/avif,image/webp,*/*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/howto/tryhow_js_slideshow_ifr.htm
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
@@ -768,7 +713,20 @@ Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/howto/tryhow_js_slideshow_ifr.htm
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/howto/img_mountains_wide.jpg HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/howto/tryhow_js_slideshow_ifr.htm
+Connection: keep-alive
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
@@ -803,19 +761,6 @@ If-Modified-Since: Mon, 06 Nov 2023 14:13:08 GMT
 If-None-Match: W/"ccc354615ffb5b4afd96268bab4a6502"
 
 ~~~
-GET https://www.w3schools.com/how-spaces-works3.png HTTP/1.1
-host: www.w3schools.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
-Accept: image/avif,image/webp,*/*
-Accept-Language: en-GB,en;q=0.5
-Referer: https://www.w3schools.com/
-Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
-Sec-Fetch-Dest: image
-Sec-Fetch-Mode: no-cors
-Sec-Fetch-Site: same-origin
-
-~~~
 GET https://www.w3schools.com/w3css_templates.jpg HTTP/1.1
 host: www.w3schools.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
@@ -823,7 +768,7 @@ Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
@@ -836,7 +781,20 @@ Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/how-spaces-works3.png HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/
+Connection: keep-alive
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
 Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
@@ -849,7 +807,20 @@ Accept: image/avif,image/webp,*/*
 Accept-Language: en-GB,en;q=0.5
 Referer: https://www.w3schools.com/
 Connection: keep-alive
-Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=8b58b34a-470c-4dd5-b5d9-234f59acb344; _sharedID_last=Sat%2C%2025%20Nov%202023%2016%3A18%3A38%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false; lotame_domain_check=w3schools.com
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+
+~~~
+GET https://www.w3schools.com/images/bg_sky_darker.gif HTTP/1.1
+host: www.w3schools.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: en-GB,en;q=0.5
+Referer: https://www.w3schools.com/lib/w3schools32.css?v=1.0.1
+Connection: keep-alive
+Cookie: _pbjs_userid_consent_data=6683316680106290; _sharedID=25a9e697-d18f-4ed5-872b-26963d99289b; _sharedID_last=Fri%2C%2024%20Nov%202023%2007%3A51%3A35%20GMT; _lr_retry_request=true; _lr_env_src_ats=false
 Sec-Fetch-Dest: image
 Sec-Fetch-Mode: no-cors
 Sec-Fetch-Site: same-origin
