@@ -176,7 +176,15 @@ function urlPatternConstruction(pathList: [number, any][]): Set<string> {
         pattern = pattern.replace(ind, token);
       }
 
-      patterns.add(pattern.slice(0, -1));
+      patterns.add(
+        pattern
+          .slice(0, -1)
+          .split("/")
+          .map((i) => {
+            return i.includes("|") ? i.split("|")[1] : "FUZZING";
+          })
+          .join("/")
+      );
       index += L;
     }
   }
