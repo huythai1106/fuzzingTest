@@ -5,7 +5,6 @@ export interface elememtObj {
   key: string;
   type: string;
   length?: number;
-  mutateValue?: string[];
   value?: any;
   dictionaries?: string[];
 }

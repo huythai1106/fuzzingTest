@@ -1,11 +1,14 @@
 import path from "path";
 import { readFile, readFolder } from "../helpers/file";
 import HTTPRequest from "./HTTPRequest";
+import PathParamDetection from "../pkg/detection/pathParam";
 
 export default class HTTPRequestManager {
   private httpRequests: HTTPRequest[];
   private httpLogs: Map<string, any[]>;
   public stopFlag: boolean = true;
+  public pattenURL: Record<number, string[]> = {};
+  public cmdFuzzs: Set<string> = new Set();
 
   public constructor() {
     this.httpRequests = [];
@@ -26,6 +29,10 @@ export default class HTTPRequestManager {
         }
       }
     });
+
+    this.removeDuplicatedHTTPRequests();
+
+    this.pattenURL = PathParamDetection(this.getHTTPRequests());
   }
 
   public setRequestsByFile(filePath: string, separation: string) {
@@ -61,10 +68,17 @@ export default class HTTPRequestManager {
     }
   }
 
-  public async startFuzzing() {
-    for (const req of this.httpRequests) {
-      await req.fuzzingRequest();
+  public getCmdFuzz() {
+    if (this.cmdFuzzs.size !== 0) {
+      return this.cmdFuzzs;
     }
+
+    this.httpRequests.forEach((r) => {
+      let a = r.makingRequestToFuzz();
+      a && this.cmdFuzzs.add(a);
+    });
+
+    return this.cmdFuzzs;
   }
 
   public view() {

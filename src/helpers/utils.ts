@@ -1,3 +1,4 @@
+import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
 import { elememtObj } from ".";
 
 const Contexts = {
@@ -71,7 +72,13 @@ const mutatedString = (inputString: string, numMutations = 100) => {
   return mutations;
 };
 
-const isIncludeInArray = (arrayString: Array<any>, originString: string) => {
+const isIncludeStringInArray = (arrayString: Array<any>, originString: any) => {
+  if (typeof originString !== "string") {
+    return {
+      status: false,
+      value: null,
+    };
+  }
   for (let i = 0; i < arrayString.length; i++) {
     if (originString.includes(arrayString[i])) {
       return {
@@ -81,8 +88,8 @@ const isIncludeInArray = (arrayString: Array<any>, originString: string) => {
     }
   }
   return {
-    value: null,
     status: false,
+    value: null,
   };
 };
 
@@ -95,24 +102,23 @@ const getKeyValueInObject = (jsonData: object) => {
         const value = obj[key];
         if (typeof value === "object") {
           if (Array.isArray(value)) {
-            // console.log(Key: ${key}, Type: arrayl Length: ${value.length});
             objValue.push({
               key: key,
               type: "array",
               length: value.length,
             });
           } else {
-            // console.log(key: ${key}, type: ${typeof value});
             objValue.push({ key: key, type: typeof value });
           }
           setKeyValue(value);
         } else {
+          let typeP = detectType(key);
+
           objValue.push({
-            mutateValue: [],
             key: key,
             value: value,
-            type: typeof value,
-            dictionaries: [typeof value],
+            type: typeP,
+            dictionaries: [typeP],
           });
         }
       }
@@ -143,7 +149,6 @@ const getKeyValueInString = (formData: string) => {
       newValue = value;
     }
     objValue.push({
-      mutateValue: [],
       key: key,
       value: newValue,
       type: typeof newValue,
@@ -151,9 +156,8 @@ const getKeyValueInString = (formData: string) => {
     });
   });
 
-
   return objValue;
-}
+};
 
 export const removeEmpty = (input: any) => {
   return !!input;
@@ -223,4 +227,57 @@ const compareRequest = (msg1: string, msg2: string) => {
   return true;
 };
 
-export { Contexts, isIncludeInArray, mutatedString, getKeyValueInObject, getKeyValueInString, compareRequest };
+const pattenOfUrl = (url: URL, pattens: Record<number, string[]>): [boolean, undefined | string] => {
+  let tokens = url.pathname.slice(1).split("/");
+
+  let length = tokens.length;
+
+  if (!length || !pattens[length]) {
+    return [false, undefined];
+  }
+
+  if (pattens[length].includes(url.pathname.slice(1))) {
+    return [false, undefined];
+  }
+
+  if (pattens[length] === undefined) {
+    return [false, undefined];
+  }
+
+  let potientialPattens = pattens[length].map((p) => {
+    return p.split("/");
+  });
+
+  for (let i = 0; i < length; i++) {
+    let token = tokens[i];
+    potientialPattens = potientialPattens.filter((p) => {
+      if (p[i] === "FUZZING" || token === p[i]) {
+        return true;
+      }
+      return false;
+    });
+  }
+
+  if (potientialPattens.length === 0) {
+    return [false, undefined];
+  } else if (potientialPattens.length > 1) {
+    let numberFuzz = 0;
+    let index = 0;
+    potientialPattens.forEach((p, index1) => {
+      let count = 0;
+      for (let i = 0; i < p.length; i++) {
+        p[i] === "FUZZING" && count++;
+      }
+      if (count > numberFuzz) {
+        numberFuzz = count;
+        index = index1;
+      }
+    });
+
+    return [true, potientialPattens[index].join("/")];
+  } else {
+    return [true, potientialPattens[0].join("/")];
+  }
+};
+
+export { Contexts, isIncludeStringInArray, mutatedString, getKeyValueInObject, compareRequest, pattenOfUrl, getKeyValueInString };

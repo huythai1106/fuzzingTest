@@ -30,6 +30,5 @@ export default class Fuzzer {
   public async startFuzzAttack() {
     console.log("Starting fuzz attack");
     console.log("--------------------------------");
-    await this.httpRequestManager?.startFuzzing();
   }
 }

@@ -15,21 +15,49 @@ export default function detectPathParam(requests: HTTPRequest[]) {
   let a = pathSegmentIdentifications(normalize_urls);
 
   let b = urlPatternConstruction(a);
-  console.log(b);
+
+  return b;
 }
 
-// algorithm 1 trong bài báo nhé
+export function detectPotentialPathParamBySendRequest(request: HTTPRequest) {
+  const pathParams = request.getStartLine().url.pathname.split("/").filter(removeEmpty);
+  const option: { [key: string]: any } = {
+    method: request.getStartLine().method,
+    headers: request.getHeaders(),
+  };
+  if (request.hasBody()) {
+    option.body = request.getBody();
+  }
+
+  let promises: Promise<string>[] = [];
+  for (let i = 0; i < pathParams.length; i++) {
+    const randomStr = "-_-_-";
+    const testUrl = [`${request.getStartLine().url.protocol}/`, request.getStartLine().url.hostname, ...pathParams.slice(0, i), randomStr, ...pathParams.slice(i + 1)].join("/");
+    promises.push(
+      new Promise((resolve, reject) => {
+        fetch(testUrl)
+          .then((res) => {
+            if (res.status === 200) {
+              return resolve(pathParams[i]);
+            }
+            return resolve("");
+          })
+          .catch(reject);
+      })
+    );
+  }
+
+  return Promise.all(promises);
+}
+
 function normalizeUrls(requests: HTTPRequest[]) {
   let results: Url[][] = [];
   const G = new Map<number, Url[]>();
   for (const request of requests) {
-    if (request.getStartLine().url.href.includes("?")) {
-      continue;
-    }
-
     const tokens = request
       .getStartLine()
-      .url.pathname.split("/")
+      .url.pathname.slice(1)
+      .split("/")
       .filter(removeEmpty)
       .map((item, index) => {
         return `${index}|${item}`;
@@ -78,13 +106,13 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
 
   for (const group of normalize_urls) {
     const L = group.length;
-    const l1 = group[0].tokens.length;
+    const l1 = group[0].tokens.length; // do dai token
     const l: string[] = [];
     const c_m = new Map<string, number>();
     const PL = new Set<any>();
-    const PL1: any[] = [];
+    const PL1: Set<any> = new Set();
 
-    for (let n = L - 1; n >= 1; n--) {
+    for (let n = L - 1; n >= 0; n--) {
       const tokens = group[n].tokens;
 
       tokens.forEach((t) => {
@@ -120,11 +148,14 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
     });
 
     let points: Point[] = [];
+
     sorted_list.forEach((item) => {
       points.push([item.index, item.occ]);
     });
 
-    const E = Math.PI / 3;
+    points = douglasPeucker(points, 1);
+
+    const E = Math.PI;
 
     for (let i = 0; i < points.length - 1; i++) {
       const angle = getAngle(points[i], points[i + 1]);
@@ -145,9 +176,8 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
         return PL.has(g);
       });
 
-      PL1.push([...a]);
+      PL1.add(JSON.stringify([...a]));
     }
-
     PATH.push([l1, PL1]);
   }
 
@@ -156,35 +186,51 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
 
 // algorithm 3 trong bài báo nhé
 // cái algorithm 3 em đọc qua thì dễ thôi, Trong 3 cái thì quan trọng nhất vẫn là cái algorithm 2
-function urlPatternConstruction(pathList: [number, any][]): Set<string> {
-  const patterns: Set<string> = new Set<string>();
+function urlPatternConstruction(pathList: [number, any][]): Record<number, string[]> {
+  const patterns: Record<number, string[]> = {};
   let index = 0;
 
   for (const [L, PL] of pathList) {
     for (const seg of PL) {
-      if ((seg as Array<any>).length === 0) {
+      let seg1 = JSON.parse(seg);
+      if ((seg1 as Array<any>).length === 0) {
         continue;
       }
+
       let pattern = "";
       for (let i = 0; i < L; i++) {
         pattern += `${index + i}/`;
       }
 
-      for (const token of seg) {
+      for (const token of seg1) {
         const [pos, name] = token.split("|");
         let ind = index + parseInt(pos) + "";
         pattern = pattern.replace(ind, token);
       }
 
-      patterns.add(
-        pattern
-          .slice(0, -1)
-          .split("/")
-          .map((i) => {
-            return i.includes("|") ? i.split("|")[1] : "FUZZING";
-          })
-          .join("/")
-      );
+      // patterns.add(
+      // pattern
+      //   .slice(0, -1)
+      //   .split("/")
+      //   .map((i) => {
+      //     return i.includes("|") ? i.split("|")[1] : "FUZZING";
+      //   })
+      //   .join("/")
+      // );
+
+      let stringPatten = pattern
+        .slice(0, -1)
+        .split("/")
+        .map((i) => {
+          return i.includes("|") ? i.split("|")[1] : "FUZZING";
+        })
+        .join("/");
+
+      if (patterns[L]) {
+        patterns[L].push(stringPatten);
+      } else {
+        patterns[L] = [stringPatten];
+      }
       index += L;
     }
   }
@@ -206,8 +252,6 @@ function urlPatternConstruction(pathList: [number, any][]): Set<string> {
 // }
 
 function getAngle(point1: Point, point2: Point, force360 = true) {
-  console.log(point1, point2);
-
   const fromX = point1[0];
   const fromY = point1[1];
   const toX = point2[0];
@@ -223,41 +267,44 @@ function getAngle(point1: Point, point2: Point, force360 = true) {
   return (degrees * Math.PI) / 180;
 }
 
-function simplifyDouglasPeucker(points: Point[], tolerance: number): Point[] {
-  if (points.length <= 2) {
-    return points; // Trường hợp cơ sở: không có gì để giảm
-  }
-  function perpendicularDistance(point: number[], lineStart: number[], lineEnd: number[]): number {
-    const [startX, startY] = lineStart;
-    const [endX, endY] = lineEnd;
-    const [x, y] = point;
+function perpendicularDistance(point: [number, number], lineStart: [number, number], lineEnd: [number, number]): number {
+  const [pointX, pointY] = point;
+  const [startX, startY] = lineStart;
+  const [endX, endY] = lineEnd;
 
-    const numerator = Math.abs((endY - startY) * x - (endX - startX) * y + endX * startY - endY * startX);
-    const denominator = Math.sqrt(Math.pow(endY - startY, 2) + Math.pow(endX - startX, 2));
-    return numerator / denominator;
-  }
+  const numerator = Math.abs((endX - startX) * (startY - pointY) - (startX - pointX) * (endY - startY));
+  const denominator = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
+  return numerator / denominator;
+}
 
-  function simplify(startIndex: number, endIndex: number): Point[] {
+// Thuật toán Douglas-Peucker
+function douglasPeucker(points: Array<[number, number]>, epsilon: number): Array<[number, number]> {
+  const end = points.length - 1;
+
+  // Đánh dấu các điểm cần giữ lại
+  const keepIndices: Set<number> = new Set([0, end]);
+
+  const simplify = (start: number, end: number): void => {
     let maxDistance = 0;
-    let farthestIndex = 0;
+    let farthestIdx = 0;
 
-    for (let i = startIndex + 1; i < endIndex; i++) {
-      const distance = perpendicularDistance(points[i], points[startIndex], points[endIndex]);
+    for (let i = start + 1; i < end; i++) {
+      const distance = perpendicularDistance(points[i], points[start], points[end]);
 
       if (distance > maxDistance) {
         maxDistance = distance;
-        farthestIndex = i;
+        farthestIdx = i;
       }
     }
 
-    if (maxDistance > tolerance) {
-      const left = simplify(startIndex, farthestIndex);
-      const right = simplify(farthestIndex, endIndex);
-      return [...left, points[farthestIndex], ...right];
-    } else {
-      return [points[startIndex], points[endIndex]];
+    if (maxDistance > epsilon) {
+      keepIndices.add(farthestIdx);
+      simplify(start, farthestIdx);
+      simplify(farthestIdx, end);
     }
-  }
+  };
 
-  return simplify(0, points.length - 1);
+  simplify(0, end);
+
+  return points.filter((point, idx) => keepIndices.has(idx));
 }

@@ -4,10 +4,12 @@ import FormMutation from "./body/Form";
 import * as constants from "./constants";
 import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
 import { FuzzingLocationsAlias } from "./constants";
-import detectPotentialPathParam from "../pkg/detection/pathParam";
+import { detectPotentialPathParamBySendRequest } from "../pkg/detection/pathParam";
 import { removeEmpty } from "../helpers/utils";
 import { elememtObj, makeRequest, sendRequest } from "../helpers";
 import { readFile } from "../helpers/file";
+import { pattenOfUrl } from "../helpers/utils";
+import { PATH } from "../helpers/assert";
 
 class StartLine {
   method!: string;
@@ -34,7 +36,6 @@ export default class HTTPRequest {
   private httpRequestManager: HTTPRequestManager;
 
   public constructor(request: string, HTTPRequestManager: HTTPRequestManager) {
-    // console.log([request]);
     this.httpRequestManager = HTTPRequestManager;
     const error = this.analyzeHTTPRequest(request.trim());
     if (error != null) throw error;
@@ -121,22 +122,33 @@ export default class HTTPRequest {
           this.typeBody = constants.TypeBody.NONE;
       }
     }
-    
+
     return null;
   }
   public async autoDetectFuzzUrl() {
     // detect path param
-    // const potentialPathParam = (await detectPotentialPathParam(this)).filter(removeEmpty);
-    // const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!;
-    // for (const path of potentialPathParam) {
-    //   const pathType = detectType(path);
-    //   fuzzingPathParam.push({
-    //     key: path,
-    //     value: path,
-    //     type: pathType,
-    //     dictionaries: [pathType],
-    //   } as fuzzingLocationDetail);
-    // }
+    // const potentialPathParam = (await detectPotentialPathParamBySendRequest(this)).filter(removeEmpty);
+
+    // console.log(potentialPathParam);
+
+    const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!;
+
+    let result = pattenOfUrl(this.getStartLine().url, this.httpRequestManager.pattenURL);
+    if (result[0] === true) {
+      let tokens = (result[1] as string).split("/");
+      let tokensUrl = this.getStartLine().url.pathname.slice(1).split("/");
+      for (let i = 0; i < tokens.length; i++) {
+        if (tokens[i] === "FUZZING") {
+          const pathType = detectType(tokensUrl[i]);
+          fuzzingPathParam.push({
+            key: tokensUrl[i],
+            value: tokensUrl[i],
+            type: pathType,
+            dictionaries: [pathType],
+          } as fuzzingLocationDetail);
+        }
+      }
+    }
 
     // detect queries
     const fuzzingQueries = this.getFuzzingLocation(FuzzingLocationsAlias.QUERY)!;
@@ -154,7 +166,6 @@ export default class HTTPRequest {
   }
 
   public autoDetectFuzzBody() {
-    // console.log("Fuzz body");
     if (this.hasBody()) {
       let keyValues: elememtObj[] = [];
       const fuzzingBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY)!;
@@ -175,51 +186,6 @@ export default class HTTPRequest {
       });
     }
     return null;
-  }
-
-  public async fuzzingRequest() {
-    this.fuzzingUrl();
-    await this.fuzzingBody();
-  }
-
-  public fuzzingUrl() {}
-
-  public async fuzzingBody() {
-    const fuzzingBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY)!;
-    if (fuzzingBody.length !== 0) {
-      for (const obj of fuzzingBody) {
-        // send request to server
-        let values: any[] = [];
-        obj.dictionaries.forEach((dic) => {
-          values = [...values, ...readFile(`${constants.DICTIONATY_PATH}/${dic}.txt`).split(/\r\n/)];
-        });
-        values.forEach(async (v) => {
-          let newBody = this.body;
-
-          newBody = newBody.replace(obj.value, v);
-          const r = makeRequest(this, {
-            body: newBody,
-          });
-
-          const response = sendRequest(r);
-          let res: any = await response;
-          let json = await res.json();
-          this.httpRequestManager.getHttpLogs().get(this.startLine.url.href)?.push({
-            status: res.status,
-            body: newBody,
-            json: json,
-          });
-
-          console.log("fuzzing");
-          console.log("---------------");
-          console.log({
-            // status: res.status,
-            body: newBody,
-            // json: json,
-          });
-        });
-      }
-    }
   }
 
   /**
@@ -284,5 +250,67 @@ export default class HTTPRequest {
     }
 
     return string;
+  }
+
+  public makingRequestToFuzz() {
+    // make a command line request to fuzz with wfuzz
+    // start with wfuzz -c -X METHODNAME -w(wordlist) filepatd -d body -H headerFuzz
+
+    let stringFuzz = `wfuzz -c `;
+    let host = this.startLine.url.host;
+    let wordlists = "";
+    let methodName = `-X ${this.startLine.method} `;
+    let index = 0;
+
+    let fuzzLocationPath = this.getFuzzingLocation(FuzzingLocationsAlias.PATH);
+    let fuzzLocationQuery = this.getFuzzingLocation(FuzzingLocationsAlias.QUERY);
+    let fuzzLocationBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY);
+
+    if (!fuzzLocationPath?.length && !fuzzLocationQuery?.length && !fuzzLocationBody?.length) {
+      return "";
+    }
+
+    // path
+    let pathname = this.startLine.url.pathname;
+    if (fuzzLocationPath?.length) {
+      for (let i = 0; i < fuzzLocationPath.length; i++) {
+        pathname = pathname.replace(fuzzLocationPath[i].value, `FUZ${index === 0 ? "" : index}Z`);
+        wordlists += `-w ${PATH}/${fuzzLocationPath[i].type}.txt `;
+
+        index++;
+      }
+    }
+
+    // params
+    let search = this.startLine.url.search;
+    if (fuzzLocationQuery?.length) {
+      for (let i = 0; i < fuzzLocationQuery.length; i++) {
+        if (fuzzLocationQuery[i].value) {
+          search = search.replace(fuzzLocationQuery[i].type === "json" ? encodeURIComponent(fuzzLocationQuery[i].value) : fuzzLocationQuery[i].value, `FUZ${index === 0 ? "" : index}Z`);
+          wordlists += `-w ${PATH}/${fuzzLocationQuery[i].type}.txt `;
+
+          index++;
+        }
+      }
+    }
+
+    // body
+    let fuzzBody = "";
+    if (this.hasBody() && fuzzLocationBody?.length) {
+      let body = this.body;
+
+      for (let i = 0; i < fuzzLocationBody.length; i++) {
+        body = body.replace(fuzzLocationBody[i].value, `FUZ${index === 0 ? "" : index}Z`);
+        wordlists += `-w ${PATH}/${fuzzLocationBody[i].type}.txt `;
+        index++;
+      }
+      fuzzBody = `-d "${body}"`;
+    }
+
+    let fullUrl = host + pathname + search;
+
+    stringFuzz += wordlists + methodName + fuzzBody + fullUrl;
+
+    return stringFuzz;
   }
 }
