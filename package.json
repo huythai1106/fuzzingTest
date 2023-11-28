@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "@turf/turf": "^6.5.0",
+    "@types/xml2js": "^0.4.14",
     "log4js": "^6.9.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "xml2js": "^0.6.2"
   }
 }

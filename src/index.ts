@@ -10,7 +10,6 @@ fuzz.setHTTPRequestManager(httpMessageManager);
 fuzz.autoDetectFuzzLocation().then(() => {
   console.log(httpMessageManager.getCmdFuzz());
   executeCommands(httpMessageManager.getCmdFuzz());
-
   // httpMessageManager.getHTTPRequests().forEach((request) => {
   //   // console.log(request.getStartLine().url.href);
   //   // console.log("PATH");

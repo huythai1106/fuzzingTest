@@ -1,12 +1,12 @@
 import { elememtObj } from "../../helpers";
-import { getKeyValueInString } from "../../helpers/utils";
+import { getKeyValueInXML } from "../../helpers/utils";
 
-export default class FormMutation {
-  formData: string;
+export default class XmlMutation {
+  xmlData: string;
   keyValues: Array<elememtObj> = [];
 
-  public constructor(formData: string) {
-    this.formData = formData;
+  public constructor(xmlData: string) {
+    this.xmlData = xmlData;
     this.init();
   }
 
@@ -15,7 +15,7 @@ export default class FormMutation {
   }
 
   private createKeyValue() {
-    this.keyValues = getKeyValueInString(this.formData);
+    this.keyValues = getKeyValueInXML(this.xmlData);
   }
 
   public getKeyValue() {

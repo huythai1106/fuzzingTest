@@ -4,7 +4,6 @@ import HTTPRequest from "../../httpMessage/HTTPRequest";
 interface Url {
   value: string;
   tokens: string[];
-  potentialParams: number[];
 }
 
 type Point = [number, number];
@@ -102,7 +101,6 @@ function normalizeUrls(requests: HTTPRequest[]) {
 // algorithm 2 trong bài báo nhé
 function pathSegmentIdentifications(normalize_urls: Url[][]) {
   let PATH: any[] = [];
-  let index = 0;
 
   for (const group of normalize_urls) {
     const L = group.length;
@@ -123,7 +121,6 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
           c_m.set(t, 1);
         }
       });
-      index += 1;
     }
 
     let thres = Number.MAX_SAFE_INTEGER;
@@ -149,18 +146,22 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
 
     let points: Point[] = [];
 
-    sorted_list.forEach((item) => {
-      points.push([item.index, item.occ]);
+    sorted_list.forEach((item, index) => {
+      points.push([index, item.occ]);
     });
 
-    points = douglasPeucker(points, 1);
+    points = douglasPeucker(points, 0.01);
 
-    const E = Math.PI;
+    let min = 0.1,
+      max = Math.PI / 2;
+
+    let E = min;
 
     for (let i = 0; i < points.length - 1; i++) {
       const angle = getAngle(points[i], points[i + 1]);
 
       if (angle >= E) {
+        E = angle > max ? max : angle;
         thres = points[i + 1][1]; // c[i + 1]
       }
     }
@@ -175,8 +176,9 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
       let a = group[i].tokens.filter((g) => {
         return PL.has(g);
       });
-
-      PL1.add(JSON.stringify([...a]));
+      if (a.length > 0) {
+        PL1.add(JSON.stringify([...a]));
+      }
     }
     PATH.push([l1, PL1]);
   }
@@ -191,6 +193,9 @@ function urlPatternConstruction(pathList: [number, any][]): Record<number, strin
   let index = 0;
 
   for (const [L, PL] of pathList) {
+    if (L === 1) {
+      patterns[L] = ["FUZZING"];
+    }
     for (const seg of PL) {
       let seg1 = JSON.parse(seg);
       if ((seg1 as Array<any>).length === 0) {
@@ -207,16 +212,6 @@ function urlPatternConstruction(pathList: [number, any][]): Record<number, strin
         let ind = index + parseInt(pos) + "";
         pattern = pattern.replace(ind, token);
       }
-
-      // patterns.add(
-      // pattern
-      //   .slice(0, -1)
-      //   .split("/")
-      //   .map((i) => {
-      //     return i.includes("|") ? i.split("|")[1] : "FUZZING";
-      //   })
-      //   .join("/")
-      // );
 
       let stringPatten = pattern
         .slice(0, -1)
@@ -256,15 +251,18 @@ function getAngle(point1: Point, point2: Point, force360 = true) {
   const fromY = point1[1];
   const toX = point2[0];
   const toY = point2[1];
-  let deltaX = fromX - toX;
-  let deltaY = fromY - toY; // reverse
+  let deltaX = toX - fromX;
+  let deltaY = toY - fromY; // reverse
+
   let radians = Math.atan2(deltaY, deltaX);
-  let degrees = (radians * 180) / Math.PI - 90; // rotate
-  if (force360) {
-    while (degrees >= 360) degrees -= 360;
-    while (degrees < 0) degrees += 360;
-  }
-  return (degrees * Math.PI) / 180;
+
+  // let degrees = (radians * 180) / Math.PI - 90; // rotate
+  // if (force360) {
+  //   while (degrees >= 360) degrees -= 360;
+  //   while (degrees < 0) degrees += 360;
+  // }
+  // return (degrees * Math.PI) / 180;
+  return radians;
 }
 
 function perpendicularDistance(point: [number, number], lineStart: [number, number], lineEnd: [number, number]): number {

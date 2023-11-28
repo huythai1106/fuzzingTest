@@ -1,5 +1,6 @@
 import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
 import { elememtObj } from ".";
+import { parseString } from "xml2js";
 
 const Contexts = {
   common: ["method", "lang", "module", "password", "user", "email", "username", "pwd", "pass"],
@@ -112,7 +113,7 @@ const getKeyValueInObject = (jsonData: object) => {
           }
           setKeyValue(value);
         } else {
-          let typeP = detectType(key);
+          let typeP = detectType(value);
 
           objValue.push({
             key: key,
@@ -159,72 +160,27 @@ const getKeyValueInString = (formData: string) => {
   return objValue;
 };
 
-export const removeEmpty = (input: any) => {
-  return !!input;
+const getKeyValueInXML = (xmlData: string) => {
+  let keyValue: elememtObj[] = [];
+  let obj: object = {};
+
+  parseString(xmlData, (err, result) => {
+    if (err) {
+      console.error("Lỗi khi phân tích XML:", err);
+      return;
+    }
+
+    // Convert JSON to XML
+    obj = { ...result };
+  });
+
+  keyValue = getKeyValueInObject(obj);
+
+  return keyValue;
 };
 
-const compareRequest = (msg1: string, msg2: string) => {
-  //handle "" in msg array
-  let request1 = msg1.split("\r\n");
-  while (request1[request1.length - 1] === "") {
-    request1.pop();
-  }
-  if (request1[0] === "") {
-    request1.shift();
-  }
-
-  let request2 = msg2.split("\r\n");
-  while (request2[request2.length - 1] === "") {
-    request2.pop();
-  }
-  if (request2[0] === "") {
-    request2.shift();
-  }
-
-  //get url
-
-  let url1 = request1[0]?.split(" ")[1]?.split("?")[0].split("#")[0];
-  let url2 = request2[0]?.split(" ")[1]?.split("?")[0].split("#")[0];
-
-  //get method
-  let method1 = request1[0]?.split(" ")[0];
-  let method2 = request2[0]?.split(" ")[0];
-
-  //get required field
-  let host1 = "";
-  let host2 = "";
-  let referer1 = "";
-  let referer2 = "";
-  let contentType1 = "";
-  let contentType2 = "";
-
-  request1.forEach((line, index) => {
-    if (request1[index].split(" ")[0] === "Content-Type:") {
-      contentType1 = request1[index].split(" ")[1];
-    } else if (request1[index].split(" ")[0] === "host:" || request1[index].split(" ")[0] === "Host:") {
-      host1 = request1[index].split(" ")[1];
-    } else if (request1[index].split(" ")[0] === "Referer:") {
-      referer1 = request1[index].split(" ")[1];
-    }
-  });
-  request2.forEach((line, index) => {
-    if (request2[index].split(" ")[0] === "Content-Type:") {
-      contentType2 = request2[index].split(" ")[1];
-    } else if (request2[index].split(" ")[0] === "host:" || request2[index].split(" ")[0] === "Host:") {
-      host2 = request2[index].split(" ")[1];
-    } else if (request2[index].split(" ")[0] === "Referer:") {
-      referer2 = request2[index].split(" ")[1];
-    }
-  });
-
-  //duplicate checked
-  if (method1 !== method2) return false;
-  if (url1 !== url2) return false;
-  if (host1 !== host2) return false;
-  if (referer1 !== referer2) return false;
-  if (contentType1 !== contentType2) return false;
-
-  return true;
+export const removeEmpty = (input: any) => {
+  return !!input;
 };
 
 const pattenOfUrl = (url: URL, pattens: Record<number, string[]>): [boolean, undefined | string] => {
@@ -280,4 +236,4 @@ const pattenOfUrl = (url: URL, pattens: Record<number, string[]>): [boolean, und
   }
 };
 
-export { Contexts, isIncludeStringInArray, mutatedString, getKeyValueInObject, compareRequest, pattenOfUrl, getKeyValueInString };
+export { Contexts, isIncludeStringInArray, mutatedString, getKeyValueInObject, pattenOfUrl, getKeyValueInString, getKeyValueInXML };

@@ -3,7 +3,7 @@ import { TypeBody } from "src/httpMessage/constants";
 
 export interface elememtObj {
   key: string;
-  type: string;
+  type?: string;
   length?: number;
   value?: any;
   dictionaries?: string[];

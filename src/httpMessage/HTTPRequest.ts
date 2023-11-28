@@ -10,6 +10,7 @@ import { elememtObj, makeRequest, sendRequest } from "../helpers";
 import { readFile } from "../helpers/file";
 import { pattenOfUrl } from "../helpers/utils";
 import { PATH } from "../helpers/assert";
+import XmlMutation from "./body/Xml";
 
 class StartLine {
   method!: string;
@@ -134,6 +135,7 @@ export default class HTTPRequest {
     const fuzzingPathParam = this.getFuzzingLocation(FuzzingLocationsAlias.PATH)!;
 
     let result = pattenOfUrl(this.getStartLine().url, this.httpRequestManager.pattenURL);
+
     if (result[0] === true) {
       let tokens = (result[1] as string).split("/");
       let tokensUrl = this.getStartLine().url.pathname.slice(1).split("/");
@@ -173,6 +175,10 @@ export default class HTTPRequest {
         keyValues = new JsonMutation(this.body).getKeyValue();
       } else if (this.typeBody === constants.TypeBody.FORM) {
         keyValues = new FormMutation(this.body).getKeyValue();
+      } else if (this.typeBody === constants.TypeBody.XML) {
+        keyValues = new XmlMutation(this.body).getKeyValue();
+      } else {
+        // do something
       }
       keyValues.forEach((obj) => {
         if (obj.dictionaries && obj.dictionaries.length > 0) {
