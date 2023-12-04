@@ -1,3 +1,4 @@
+import { KEYFUZZ } from "../../httpMessage/constants";
 import { removeEmpty } from "../../helpers/utils";
 import HTTPRequest from "../../httpMessage/HTTPRequest";
 
@@ -12,7 +13,6 @@ export default function detectPathParam(requests: HTTPRequest[]) {
   const normalize_urls = normalizeUrls(requests);
 
   let a = pathSegmentIdentifications(normalize_urls);
-
   let b = urlPatternConstruction(a);
 
   return b;
@@ -52,10 +52,15 @@ export function detectPotentialPathParamBySendRequest(request: HTTPRequest) {
 function normalizeUrls(requests: HTTPRequest[]) {
   let results: Url[][] = [];
   const G = new Map<number, Url[]>();
+  let pathNames: Set<string> = new Set();
+
   for (const request of requests) {
-    const tokens = request
-      .getStartLine()
-      .url.pathname.slice(1)
+    pathNames.add(request.getStartLine().url.pathname);
+  }
+
+  for (const pathname of pathNames) {
+    const tokens = pathname
+      .slice(1)
       .split("/")
       .filter(removeEmpty)
       .map((item, index) => {
@@ -64,7 +69,7 @@ function normalizeUrls(requests: HTTPRequest[]) {
 
     const length = tokens.length;
     const normalizedUrl = {
-      value: request.getStartLine().url.pathname,
+      value: pathname,
       tokens: tokens,
     } as Url;
     if (!G.has(length)) {
@@ -98,7 +103,7 @@ function normalizeUrls(requests: HTTPRequest[]) {
   return results;
 }
 
-// algorithm 2 trong bài báo nhé
+// algorithm 2 trong bài báo
 function pathSegmentIdentifications(normalize_urls: Url[][]) {
   let PATH: any[] = [];
 
@@ -108,7 +113,7 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
     const l: string[] = [];
     const c_m = new Map<string, number>();
     const PL = new Set<any>();
-    const PL1: Set<any> = new Set();
+    const arrayPathSegments: Set<any> = new Set();
 
     for (let n = L - 1; n >= 0; n--) {
       const tokens = group[n].tokens;
@@ -153,14 +158,14 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
     points = douglasPeucker(points, 0.01);
 
     let min = 0.1,
-      max = Math.PI / 2;
+      max = Math.PI / 3;
 
     let E = min;
 
     for (let i = 0; i < points.length - 1; i++) {
       const angle = getAngle(points[i], points[i + 1]);
 
-      if (angle >= E) {
+      if (angle > E && E !== max) {
         E = angle > max ? max : angle;
         thres = points[i + 1][1]; // c[i + 1]
       }
@@ -177,25 +182,21 @@ function pathSegmentIdentifications(normalize_urls: Url[][]) {
         return PL.has(g);
       });
       if (a.length > 0) {
-        PL1.add(JSON.stringify([...a]));
+        arrayPathSegments.add(JSON.stringify([...a]));
       }
     }
-    PATH.push([l1, PL1]);
+    PATH.push([l1, arrayPathSegments]);
   }
 
   return PATH;
 }
 
-// algorithm 3 trong bài báo nhé
-// cái algorithm 3 em đọc qua thì dễ thôi, Trong 3 cái thì quan trọng nhất vẫn là cái algorithm 2
+// algorithm 3 trong bài báo
 function urlPatternConstruction(pathList: [number, any][]): Record<number, string[]> {
   const patterns: Record<number, string[]> = {};
   let index = 0;
 
   for (const [L, PL] of pathList) {
-    if (L === 1) {
-      patterns[L] = ["FUZZING"];
-    }
     for (const seg of PL) {
       let seg1 = JSON.parse(seg);
       if ((seg1 as Array<any>).length === 0) {
@@ -217,7 +218,7 @@ function urlPatternConstruction(pathList: [number, any][]): Record<number, strin
         .slice(0, -1)
         .split("/")
         .map((i) => {
-          return i.includes("|") ? i.split("|")[1] : "FUZZING";
+          return i.includes("|") ? i.split("|")[1] : KEYFUZZ;
         })
         .join("/");
 
@@ -230,21 +231,10 @@ function urlPatternConstruction(pathList: [number, any][]): Record<number, strin
     }
   }
 
+  console.log(patterns);
+
   return patterns;
 }
-
-// douglas-peucker
-// import { polygon, simplify, Position } from "@turf/turf";
-
-// function douglasPeucker(points: number[][][]) {
-//   const positions: Position[][] = points;
-//   const geoJson = polygon(positions);
-//   const options = {
-//     tolerance: 0.01, // càng nhỏ càng giữ lại nhiều điểm trên trục
-//   };
-//   const simplified = simplify(geoJson, options);
-//   return simplified;
-// }
 
 function getAngle(point1: Point, point2: Point, force360 = true) {
   const fromX = point1[0];

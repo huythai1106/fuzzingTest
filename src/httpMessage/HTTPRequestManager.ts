@@ -9,6 +9,9 @@ export default class HTTPRequestManager {
   public stopFlag: boolean = true;
   public pattenURL: Record<number, string[]> = {};
   public cmdFuzzs: Set<string> = new Set();
+  public totalNumberFuzzPath: number = 0;
+  public totalNumberFuzzQuery: number = 0;
+  public totalNumberFuzzBody: number = 0;
 
   public constructor() {
     this.httpRequests = [];
@@ -75,6 +78,11 @@ export default class HTTPRequestManager {
 
     this.httpRequests.forEach((r) => {
       let a = r.makingRequestToFuzz();
+      if (!this.cmdFuzzs.has(a)) {
+        this.totalNumberFuzzBody += r.numberFuzzBody;
+        this.totalNumberFuzzQuery += r.numberFuzzQuery;
+        this.totalNumberFuzzPath += r.numberFuzzPath;
+      }
       a && this.cmdFuzzs.add(a);
     });
 

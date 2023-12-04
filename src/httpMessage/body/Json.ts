@@ -18,7 +18,7 @@ export default class JsonMutation {
   }
 
   private createKeyValue() {
-    this.keyValues = getKeyValueInObject(this.jsonObject);
+    this.keyValues = getKeyValueInObject(this.jsonObject, { context: "json" });
   }
 
   public getKeyValue() {

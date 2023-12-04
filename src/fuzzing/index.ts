@@ -1,4 +1,3 @@
-import HTTPRequest from "src/httpMessage/HTTPRequest";
 import HTTPRequestManager from "src/httpMessage/HTTPRequestManager";
 import HTTPResponseManager from "src/httpMessage/HTTPResponseManager";
 

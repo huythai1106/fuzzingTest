@@ -1,13 +1,19 @@
-import fs from 'fs'
+import fs from "fs";
 
 export const readFolder = (path: string): string[] => {
-    return fs.readdirSync(path, { encoding: 'utf8' })
-}
+  return fs.readdirSync(path, { encoding: "utf8" });
+};
 
 export const readFile = (path: string): string => {
-    return fs.readFileSync(path, { encoding: 'utf8' })
-}
+  return fs.readFileSync(path, { encoding: "utf8" });
+};
 
 export const exportFile = (path: string, data: any) => {
-    fs.writeFileSync(path, data, { flag: 'w' })
-}
+  fs.writeFileSync(path, data, { flag: "w" });
+};
+
+export const isExistFileNameInFolder = (fileName: string, path: string) => {
+  let stringArr = readFolder(path);
+
+  return stringArr.includes(fileName);
+};

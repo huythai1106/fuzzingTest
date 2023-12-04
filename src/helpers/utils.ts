@@ -1,9 +1,10 @@
-import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
+import detectType, { detectTypeAdvance } from "../pkg/detection/type";
 import { elememtObj } from ".";
 import { parseString } from "xml2js";
+import { KEYFUZZ } from "../httpMessage/constants";
 
-const Contexts = {
-  common: ["method", "lang", "module", "password", "user", "email", "username", "pwd", "pass"],
+const Contexts: { [key: string]: any } = {
+  common: ["method", "lang", "module", "password", "user", "email", "username", "uname", "pwd", "pass"],
   method: {
     dic: "method",
     rank: 0,
@@ -25,6 +26,10 @@ const Contexts = {
     rank: 0,
   },
   username: {
+    dic: "username",
+    rank: 0,
+  },
+  uname: {
     dic: "username",
     rank: 0,
   },
@@ -94,7 +99,12 @@ const isIncludeStringInArray = (arrayString: Array<any>, originString: any) => {
   };
 };
 
-const getKeyValueInObject = (jsonData: object) => {
+const getKeyValueInObject = (
+  jsonData: object,
+  option?: {
+    context?: string;
+  }
+) => {
   const objValue: elememtObj[] = [];
 
   const setKeyValue = (obj: any) => {
@@ -113,13 +123,12 @@ const getKeyValueInObject = (jsonData: object) => {
           }
           setKeyValue(value);
         } else {
-          let typeP = detectType(value);
-
+          let type = detectTypeAdvance(key, value);
           objValue.push({
             key: key,
             value: value,
-            type: typeP,
-            dictionaries: [typeP],
+            type: type[0],
+            dictionaries: option?.context ? [option?.context, ...type] : [...type],
           });
         }
       }
@@ -140,20 +149,14 @@ const getKeyValueInObject = (jsonData: object) => {
 const getKeyValueInString = (formData: string) => {
   const objValue: elememtObj[] = [];
   const params = new URLSearchParams(formData);
-  const keyValue: { key: string; value: string }[] = [];
 
   params.forEach((value, key) => {
-    let newValue: any;
-    if (!isNaN(Number(value))) {
-      newValue = Number(value);
-    } else {
-      newValue = value;
-    }
+    let type = detectTypeAdvance(key, value);
     objValue.push({
       key: key,
-      value: newValue,
-      type: typeof newValue,
-      dictionaries: [typeof newValue],
+      value: value,
+      type: type[0],
+      dictionaries: [...type],
     });
   });
 
@@ -170,11 +173,10 @@ const getKeyValueInXML = (xmlData: string) => {
       return;
     }
 
-    // Convert JSON to XML
     obj = { ...result };
   });
 
-  keyValue = getKeyValueInObject(obj);
+  keyValue = getKeyValueInObject(obj, { context: "xml" });
 
   return keyValue;
 };
@@ -184,19 +186,11 @@ export const removeEmpty = (input: any) => {
 };
 
 const pattenOfUrl = (url: URL, pattens: Record<number, string[]>): [boolean, undefined | string] => {
-  let tokens = url.pathname.slice(1).split("/");
+  let tokens = url.pathname.slice(1).split("/").filter(removeEmpty);
 
   let length = tokens.length;
 
-  if (!length || !pattens[length]) {
-    return [false, undefined];
-  }
-
-  if (pattens[length].includes(url.pathname.slice(1))) {
-    return [false, undefined];
-  }
-
-  if (pattens[length] === undefined) {
+  if (!length || !pattens[length] || pattens[length].includes(url.pathname.slice(1))) {
     return [false, undefined];
   }
 
@@ -207,13 +201,12 @@ const pattenOfUrl = (url: URL, pattens: Record<number, string[]>): [boolean, und
   for (let i = 0; i < length; i++) {
     let token = tokens[i];
     potientialPattens = potientialPattens.filter((p) => {
-      if (p[i] === "FUZZING" || token === p[i]) {
+      if (p[i] === KEYFUZZ || token === p[i]) {
         return true;
       }
       return false;
     });
   }
-
   if (potientialPattens.length === 0) {
     return [false, undefined];
   } else if (potientialPattens.length > 1) {
@@ -222,18 +215,26 @@ const pattenOfUrl = (url: URL, pattens: Record<number, string[]>): [boolean, und
     potientialPattens.forEach((p, index1) => {
       let count = 0;
       for (let i = 0; i < p.length; i++) {
-        p[i] === "FUZZING" && count++;
+        p[i] !== KEYFUZZ && count++;
       }
       if (count > numberFuzz) {
         numberFuzz = count;
         index = index1;
       }
     });
-
     return [true, potientialPattens[index].join("/")];
   } else {
     return [true, potientialPattens[0].join("/")];
   }
 };
+
+// const detectT = (key: string, value: string) => {
+//   let typeP = detectType(value);
+//   if (typeP === "string") {
+//     return detectType(key);
+//   }
+
+//   return typeP;
+// };
 
 export { Contexts, isIncludeStringInArray, mutatedString, getKeyValueInObject, pattenOfUrl, getKeyValueInString, getKeyValueInXML };

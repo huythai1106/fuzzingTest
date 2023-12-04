@@ -4,6 +4,11 @@ export const isNumber = (input: string) => {
   return !isNaN(Number(input)) ? [true, Number(input)] : [false, input];
 };
 
+export const isVersion = (input: string) => {
+  const versionPattern: RegExp = /^\d+\.\d+\.\d+$/;
+  return [versionPattern.test(input), input];
+};
+
 export const isUUID = (input: string) => {
   const is_uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(input);
   return [is_uuid, input];
@@ -38,11 +43,19 @@ export const isFile = (input: string) => {
 
 export const isSpecialType = (input: string) => {
   let o = isIncludeStringInArray(Contexts.common, input);
-  return [o.status, o.value];
+  if (o.status) {
+    return [o.status, Contexts[o.value].dic];
+  } else {
+    return [false, input];
+  }
 };
 
-export const getSpecialType = (input: string) => {
-  return isIncludeStringInArray(Contexts.common, input).value;
-};
+// export const getSpecialType = (input: string) => {
+//   if (isIncludeStringInArray(Contexts.common, input).status) {
+//     return (Contexts[isIncludeStringInArray(Contexts.common, input).value] as any).dic;
+//   } else {
+//     return undefined;
+//   }
+// };
 
 export const PATH = "src/fuzzing/dictionaries";

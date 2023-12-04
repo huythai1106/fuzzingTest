@@ -2,14 +2,11 @@ import HTTPRequestManager from "src/httpMessage/HTTPRequestManager";
 import JsonMutation from "./body/Json";
 import FormMutation from "./body/Form";
 import * as constants from "./constants";
-import detectType, { TYPE_ALIAS } from "../pkg/detection/type";
+import detectType, { TYPE_ALIAS, detectTypeAdvance } from "../pkg/detection/type";
 import { FuzzingLocationsAlias } from "./constants";
 import { detectPotentialPathParamBySendRequest } from "../pkg/detection/pathParam";
-import { removeEmpty } from "../helpers/utils";
-import { elememtObj, makeRequest, sendRequest } from "../helpers";
-import { readFile } from "../helpers/file";
-import { pattenOfUrl } from "../helpers/utils";
-import { PATH } from "../helpers/assert";
+import { elememtObj } from "../helpers";
+import { pattenOfUrl, removeEmpty } from "../helpers/utils";
 import XmlMutation from "./body/Xml";
 
 class StartLine {
@@ -20,9 +17,9 @@ class StartLine {
 
 class fuzzingLocationDetail {
   key!: any;
-  value!: any;
-  type!: TYPE_ALIAS;
-  dictionaries!: TYPE_ALIAS[];
+  observed_value!: any;
+  _type!: TYPE_ALIAS;
+  _dictionaries!: string[];
 }
 
 export default class HTTPRequest {
@@ -35,6 +32,10 @@ export default class HTTPRequest {
   private fuzzingLocations!: Map<FuzzingLocationsAlias, fuzzingLocationDetail[]>;
 
   private httpRequestManager: HTTPRequestManager;
+
+  public numberFuzzPath: number = 0;
+  public numberFuzzQuery: number = 0;
+  public numberFuzzBody: number = 0;
 
   public constructor(request: string, HTTPRequestManager: HTTPRequestManager) {
     this.httpRequestManager = HTTPRequestManager;
@@ -108,8 +109,10 @@ export default class HTTPRequest {
       }
     }
 
-    if (this.headers["Content-Type"]) {
-      switch (this.headers["Content-Type"]) {
+    let contentType = this.headers["Content-Type"] || this.headers["content-type"];
+
+    if (contentType) {
+      switch (contentType) {
         case "application/x-www-form-urlencoded":
           this.typeBody = constants.TypeBody.FORM;
           break;
@@ -117,6 +120,7 @@ export default class HTTPRequest {
           this.typeBody = constants.TypeBody.JSON;
           break;
         case "application/xml":
+        case "text/xml":
           this.typeBody = constants.TypeBody.XML;
           break;
         default:
@@ -137,19 +141,39 @@ export default class HTTPRequest {
     let result = pattenOfUrl(this.getStartLine().url, this.httpRequestManager.pattenURL);
 
     if (result[0] === true) {
+      console.log("path name:", this.startLine.url.pathname);
+      console.log(`patten   : /${result[1]} \n`);
       let tokens = (result[1] as string).split("/");
       let tokensUrl = this.getStartLine().url.pathname.slice(1).split("/");
       for (let i = 0; i < tokens.length; i++) {
-        if (tokens[i] === "FUZZING") {
+        if (!tokensUrl[i]) {
+          continue;
+        }
+        if (tokens[i] === constants.KEYFUZZ) {
           const pathType = detectType(tokensUrl[i]);
           fuzzingPathParam.push({
             key: tokensUrl[i],
-            value: tokensUrl[i],
-            type: pathType,
-            dictionaries: [pathType],
+            observed_value: tokensUrl[i],
+            _type: pathType,
+            _dictionaries: ["query", pathType],
           } as fuzzingLocationDetail);
         }
       }
+    } else {
+      // try {
+      //   const potentialPathParam = (await detectPotentialPathParamBySendRequest(this)).filter(removeEmpty);
+      //   for (const path of potentialPathParam) {
+      //     const pathType = detectType(path);
+      //     fuzzingPathParam.push({
+      //       key: undefined,
+      //       observed_value: path,
+      //       type: pathType,
+      //       dictionaries: [pathType],
+      //     } as fuzzingLocationDetail);
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      // }
     }
 
     // detect queries
@@ -157,12 +181,12 @@ export default class HTTPRequest {
 
     const queries = this.startLine.url.searchParams;
     for (const [key, value] of queries.entries()) {
-      const queryType = detectType(value);
+      const queryType = detectTypeAdvance(key, value);
       fuzzingQueries.push({
         key: key,
-        value: value,
-        type: queryType,
-        dictionaries: [queryType],
+        observed_value: value,
+        _type: queryType[0],
+        _dictionaries: ["query", ...queryType],
       } as fuzzingLocationDetail);
     }
   }
@@ -183,10 +207,10 @@ export default class HTTPRequest {
       keyValues.forEach((obj) => {
         if (obj.dictionaries && obj.dictionaries.length > 0) {
           fuzzingBody.push({
-            dictionaries: obj.dictionaries as any,
             key: obj.key,
-            type: obj.type as any,
-            value: obj.value,
+            observed_value: obj.value,
+            _type: obj.type as any,
+            _dictionaries: obj.dictionaries as any,
           });
         }
       });
@@ -265,6 +289,7 @@ export default class HTTPRequest {
     let stringFuzz = `wfuzz -c `;
     let host = this.startLine.url.host;
     let wordlists = "";
+    let header = "";
     let methodName = `-X ${this.startLine.method} `;
     let index = 0;
 
@@ -272,16 +297,26 @@ export default class HTTPRequest {
     let fuzzLocationQuery = this.getFuzzingLocation(FuzzingLocationsAlias.QUERY);
     let fuzzLocationBody = this.getFuzzingLocation(FuzzingLocationsAlias.BODY);
 
+    this.numberFuzzPath = fuzzLocationPath ? fuzzLocationPath.length : 0;
+    this.numberFuzzQuery = fuzzLocationQuery ? fuzzLocationQuery.length : 0;
+    this.numberFuzzBody = fuzzLocationBody ? fuzzLocationBody.length : 0;
+
     if (!fuzzLocationPath?.length && !fuzzLocationQuery?.length && !fuzzLocationBody?.length) {
       return "";
+    }
+
+    // header
+    for (let h in this.headers) {
+      header += `-H "${h}: ${this.headers[h]}" `;
     }
 
     // path
     let pathname = this.startLine.url.pathname;
     if (fuzzLocationPath?.length) {
       for (let i = 0; i < fuzzLocationPath.length; i++) {
-        pathname = pathname.replace(fuzzLocationPath[i].value, `FUZ${index === 0 ? "" : index}Z`);
-        wordlists += `-w ${PATH}/${fuzzLocationPath[i].type}.txt `;
+        let wordlist = constants.makeWordlist(fuzzLocationPath[i]._dictionaries);
+        pathname = pathname.replace(fuzzLocationPath[i].observed_value, `FUZ${index === 0 ? "" : index}Z`);
+        wordlists += `-w ${wordlist} `;
 
         index++;
       }
@@ -291,9 +326,14 @@ export default class HTTPRequest {
     let search = this.startLine.url.search;
     if (fuzzLocationQuery?.length) {
       for (let i = 0; i < fuzzLocationQuery.length; i++) {
-        if (fuzzLocationQuery[i].value) {
-          search = search.replace(fuzzLocationQuery[i].type === "json" ? encodeURIComponent(fuzzLocationQuery[i].value) : fuzzLocationQuery[i].value, `FUZ${index === 0 ? "" : index}Z`);
-          wordlists += `-w ${PATH}/${fuzzLocationQuery[i].type}.txt `;
+        if (fuzzLocationQuery[i].observed_value) {
+          let wordlist = constants.makeWordlist(fuzzLocationQuery[i]._dictionaries);
+
+          search = search.replace(
+            fuzzLocationQuery[i]._type === "json" ? encodeURIComponent(fuzzLocationQuery[i].observed_value) : fuzzLocationQuery[i].observed_value,
+            `FUZ${index === 0 ? "" : index}Z`
+          );
+          wordlists += `-w ${wordlist} `;
 
           index++;
         }
@@ -306,17 +346,18 @@ export default class HTTPRequest {
       let body = this.body;
 
       for (let i = 0; i < fuzzLocationBody.length; i++) {
-        body = body.replace(fuzzLocationBody[i].value, `FUZ${index === 0 ? "" : index}Z`);
-        wordlists += `-w ${PATH}/${fuzzLocationBody[i].type}.txt `;
+        let wordlist = constants.makeWordlist(fuzzLocationBody[i]._dictionaries);
+        body = body.replace(fuzzLocationBody[i].observed_value, `FUZ${index === 0 ? "" : index}Z`);
+        wordlists += `-w ${wordlist} `;
         index++;
       }
-      fuzzBody = `-d "${body}"`;
+      fuzzBody = `-d "${body}" `;
     }
 
     let fullUrl = host + pathname + search;
 
+    // stringFuzz += wordlists + header + methodName + fuzzBody + fullUrl;
     stringFuzz += wordlists + methodName + fuzzBody + fullUrl;
-
     return stringFuzz;
   }
 }
